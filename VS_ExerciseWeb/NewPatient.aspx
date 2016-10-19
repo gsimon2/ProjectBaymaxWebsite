@@ -34,6 +34,7 @@
         <ul>
             <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
             <li><a href="ReportsView.aspx">View Reports</a></li>
+            <li><a href="PostLogon.aspx">Back to Home</a></li>
             <li><a href="WelcomePage.aspx">Sign Out</a></li>
         </ul>
     </div>
@@ -56,7 +57,7 @@
                     <tr>
                         <td class="auto-style3">Set password:</td>
                         <td>
-                            <asp:TextBox ID="Password_text" runat="server" Width="200px"></asp:TextBox></td>
+                            <asp:TextBox ID="Password_text" TextMode="Password" runat="server" Width="200px"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td class="auto-style3">Email address:</td>
