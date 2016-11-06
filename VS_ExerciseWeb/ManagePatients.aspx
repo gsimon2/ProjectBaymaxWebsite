@@ -71,9 +71,10 @@
         <p><strong>Navigation</strong></p> 
         <ul>
             <li><a href="NewPatient.aspx">Create New Patient</a></li>
+            <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
             <li><a href="ReportsView.aspx">View Reports</a></li>
             <li><a href="PostLogon.aspx">Back to Home</a></li>
-            <li><a href="WelcomePage.aspx">Sign Out</a></li> <!--Need to add function!-->
+            <li><a href="WelcomePage.aspx">Sign Out</a></li>
         </ul>
     </div>
 
