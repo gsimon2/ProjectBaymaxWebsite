@@ -4,34 +4,31 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home Screen</title>
+    <title>Welcome - Orthopaedic Exercise System</title>
     <style>
-
         p {padding-left:10px}
+        body{height:100%;margin:0;padding:0;background-image:url("Images/background_bgwave.jpg");background-repeat:repeat-y;background-size:100%}
         #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
-        #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge}
+        #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
-        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen}
-        #pagecontent{height : 458px; width : 600px; float:left; background-color:lightblue}
+        #leftpanel{width:200px; height:1000px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel p{margin-top:50px}
+        #pagecontent{height : 1000px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
         #welcome{padding-top:50px;margin-left:90px;font-size:larger;font-family:'Franklin Gothic Medium';float:left}
-        #rightpanel{width:200px; height:458px; float:right; background-color:palegreen}
-        #footer{float:left; height:80px; width:1000px; background-color:mediumseagreen}
+        #welcome img{margin-left:100px}
+        #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style3 {height: 116px;  margin-top: 12px}
         a:hover{background-color: yellow}
     </style>
 </head>
 
-<body background="Images/background_bgwave.jpg"/>
+<body>
     <div id="entire">
         <div id="header">
             <br />
             <h1 class="auto-style3">Orthopaedic Exercise System</h1>
         </div>
-        <br>
-
-        <div id="toppanel">
-
-        </div>
+        <br/>
 
         <div id="leftpanel">
             <p><strong>Navigation</strong></p>
@@ -52,9 +49,6 @@
                 <!-- <p >Hello, [user's name]!</p><br> -->
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Machine_image.png" Height="300px" BorderWidth="2px"/>
             </div>
-        </div>
-
-        <div id="rightpanel">            
         </div>
 
         <div id="footer" style="text-align:center">
