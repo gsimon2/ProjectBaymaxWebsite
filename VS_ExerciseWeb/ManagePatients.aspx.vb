@@ -7,4 +7,7 @@ Partial Class ManagePatients
         NumberText.Text = ""
         'ExerciseList.ClearSelection()
     End Sub
+
+
+
 End Class

@@ -46,7 +46,10 @@
 
         <div id="pagecontent">
             <div id="welcome">
-                <p>Hello, [user's name]!</p><br>
+                
+                <asp:label runat="server" id="WelcomeMessage" text= "label" ></asp:label>
+                <br />
+                <!-- <p >Hello, [user's name]!</p><br> -->
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Machine_image.png" Height="300px" BorderWidth="2px"/>
             </div>
         </div>

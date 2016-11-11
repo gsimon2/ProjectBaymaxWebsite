@@ -1,83 +1,4 @@
-﻿Imports System.Data.SqlClient
-
-Partial Class WelcomePage
-    Inherits System.Web.UI.Page
-
-
-
-    Sub Login_Button_Click()
-        On Error GoTo Login_Button_Click_Error
-        Dim con As New SqlConnection
-        Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-        Dim cmd As New SqlCommand
-        Dim rd As SqlDataReader
-        Dim WebsiteName As String = "ProjectBaymax.com"
-        
-        'Make sure text has been entered for both fields
-        If UsernameTextBox.Text = "" Then
-            MsgBox("Please enter a username.", MsgBoxStyle.Information, WebsiteName + " - Login")
-            Exit Sub
-        End If
-        If PasswordTextBox.Text = "" Then
-            MsgBox("Please enter a password.", MsgBoxStyle.Information, WebsiteName + " - Login")
-            Exit Sub
-        End If
-
-        'Connection to SQL Server
-        con.ConnectionString = strCon
-        cmd.Connection = con
-        con.Open()
-        cmd.CommandText = "SELECT * FROM Users WHERE UserName = '" & UsernameTextBox.Text & "' AND UserPasswordHash = HASHBYTES('SHA1', '" & PasswordTextBox.Text & "')"
-        rd = cmd.ExecuteReader
-
-        'Check to see if entered username and password are valid
-        If rd.HasRows Then
-
-            'Harvest User Info - UserID from Users table
-            rd.Read()
-            GlobalVars.CurrentUserID = rd.GetValue(2).ToString()
-            Session("UserID") = GlobalVars.CurrentUserID
-            'MsgBox(GlobalVars.CurrentUserID)
-            rd.Close()
-
-            'Harvest User Info - UserFirstName from Demographics table
-            cmd.CommandText = "SELECT * FROM Demographics WHERE UserID = '" & GlobalVars.CurrentUserID & "'"
-            rd = cmd.ExecuteReader
-            If rd.HasRows Then
-                rd.Read()
-                GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
-                Session("UserName") = GlobalVars.CurrentUserFirstName
-                'MsgBox(GlobalVars.CurrentUserFirstName)
-
-                'Transfer to post logon webpage
-                Server.Transfer("PostLogon.aspx", True)
-
-            Else
-                MsgBox("No Demographics record found for " & UsernameTextBox.Text & "!", MsgBoxStyle.Information, WebsiteName + " - Login")
-                GoTo Login_Button_Click_Exit
-            End If
-            rd.Close()
-
-
-
-        Else
-            MsgBox("Invalid Username or Password", MsgBoxStyle.Information, WebsiteName + " - Login")
-            GoTo Login_Button_Click_Exit
-        End If
-
-        
-
-
-Login_Button_Click_Exit:
-        rd.Close()
-        con.Close()
-        Exit Sub
-Login_Button_Click_Error:
-        MsgBox("Error: " & Err.Description, MsgBoxStyle.Information, WebsiteName + " - Login")
-        Resume Login_Button_Click_Exit
-    End Sub
-
-
+﻿Namespace WebApp
     Public Class GlobalVars
 
         Enum Forms
@@ -321,7 +242,7 @@ Login_Button_Click_Error:
             Return Reps
         End Function
     End Class
+End Namespace
 
-End Class
 
 

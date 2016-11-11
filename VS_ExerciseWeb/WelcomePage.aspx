@@ -46,19 +46,21 @@
                         <tr>
                             <td>User ID:</td>
                             <td>
-                                <asp:TextBox ID="UserID_text" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="UsernameTextBox" runat="server"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
                             <td>
-                                <asp:TextBox ID="Password_text" TextMode="Password" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="PasswordTextBox" TextMode="Password" runat="server"></asp:TextBox></td>
                         </tr>
                     </table>
                     <br>
-                    <input type=button onClick="location.href='PostLogon.aspx'" value='Login' style="font-family:'Franklin Gothic Medium'"/>
+                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "login" style="font-family:'Franklin Gothic Medium'" id ="Login_Button"/>
+                    <!--<input type=button onClick="location.href='PostLogon.aspx'" value='Login' style="font-family:'Franklin Gothic Medium'"/>-->
                     <br>
                 </fieldset>
             </div>
+
         </form>
         </div>
 
