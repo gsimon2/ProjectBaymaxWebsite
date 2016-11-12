@@ -14,7 +14,7 @@
         #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #welcome{padding-top:50px;margin-left:90px;font-size:larger;font-family:'Franklin Gothic Medium';float:left}
+        #welcome{padding-top:50px;margin-left:90px;font-size:larger;float:left}
         #welcome img{margin-left:100px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style3 {height: 116px;  margin-top: 12px}

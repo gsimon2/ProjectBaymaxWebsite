@@ -4,20 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Welcome Page</title>
+    <title>Home Page - Orthopaedic Exercise System</title>
     <style>
         p {padding-left:10px}
-        body{height:100%;margin:0;padding:0;background-image:url("Images/background_bgwave.jpg");background-repeat:repeat-y;background-size:100%}
+        body{height:100%; margin:0; padding:0; background-image:url("Images/background_bgwave.jpg"); background-repeat:repeat-y; background-size:100%}
         #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
-        #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
+        #header{height:140px; width:1000px; background-color:cornflowerblue; border:ridge; border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
-        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
-        #pagecontent{height : 458px; width : 536px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen; border:ridge; border-color:mediumseagreen}
+        #pagecontent{height:458px; width:536px; margin-left:20px; float:left; background-color:lightblue; border:ridge; border-color:mediumseagreen}
         #login{margin-top:50px; margin-left:100px; float:left}
-        #rightpanel{width:200px; height:458px; margin-left:20px; float:right; background-color:palegreen;border:ridge; border-color:mediumseagreen}
-        #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
-        .auto-style3 {height: 116px;  margin-top: 12px}
-        a:hover{background-color: yellow}
+        #rightpanel{width:200px; height:458px; margin-left:20px; float:right; background-color:palegreen; border:ridge; border-color:mediumseagreen}
+        #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge; border-color:mediumseagreen}
+        .auto-style3{height:116px; margin-top:12px}
+        a:hover{background-color:yellow}
     </style>
 </head>
 
@@ -55,8 +55,8 @@
                         </tr>
                     </table>
                     <br/>
-                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "login" style="font-family:'Franklin Gothic Medium'" id ="Login_Button"/>
-                    <!--<input type=button onClick="location.href='PostLogon.aspx'" value='Login' style="font-family:'Franklin Gothic Medium'"/>-->
+                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "login" id ="Login_Button"/>
+                    <!--<input type=button onClick="location.href='PostLogon.aspx'" value='Login' />-->
                     <br/>
                 </fieldset>
             </div>

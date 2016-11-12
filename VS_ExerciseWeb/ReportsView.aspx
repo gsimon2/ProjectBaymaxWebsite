@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Reports - Orthopaedic Exercise System</title>
 
     <!--**the following is needed for the calendar popup**-->
         <meta charset="utf-8">
@@ -24,161 +24,173 @@
 
     <style>
         p {padding-left:10px}
-        #header{height:100px}
-        #header h1{font-size:40px;font-family:'Franklin Gothic Medium';text-align: center}
-        #navigation{width:200px;padding-top:8px;height:400px;background-color:powderblue;margin-top:50px;font-family:'Franklin Gothic Medium';float:left}
-        #query{margin-top:50px;margin-left:230px;font-family:'Franklin Gothic Medium';float:left}
-        #reportlist{margin-top:50px;margin-left:60px;font-family:'Franklin Gothic Medium';float:left}
-        .auto-style1 {
-            width: 200px;
-        }
+        body{height:100%;margin:0;padding:0;background-image:url("Images/background_bgwave.jpg");background-repeat:repeat-y;background-size:100%}
+        #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
+        #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
+        #header h1{font-size:60px; text-align:center}
+        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel p{margin-top:50px}        
+        #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #query{margin-top:50px;margin-left:180px;float:left}
+        #reportlist{margin-top:50px;float:left}
+        #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
+        .auto-style1{width: 200px}
+        a:hover{background-color: yellow}
     </style>
 </head>
 
-<body background="Images/background_bluegreen.jpeg">
+<body>
+    <div id="entire">
+        <div id="header">
+            <h1>Shoulder Exercise System</h1>
+        </div>
+        <br/>
 
-    <div id="header">
-        <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Left" Height="100px" BorderWidth="2px"/>
-        <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="100px" ImageAlign="Right" BorderWidth="2px" />
-        <br>
-        <h1>Shoulder Exercise<br>System</h1>
-    </div>
-    <br>
-
-    <div id="navigation">
-        <p><strong>Navigation</strong></p>
-        <ul>
-            <li><a href="NewPatient.aspx">Create New Patient</a></li>
-            <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
-            <li><a href="ReportsView.aspx">View Reports</a></li>
-            <li><a href="PostLogon.aspx">Back to Home</a></li>
-            <li><a href="WelcomePage.aspx">Sign Out</a></li>
-        </ul>
-    </div>
-
-    <form id="form1" runat="server">
-
-        <div id="query">
-            <fieldset style="width: 400px" dir="ltr">
-                <legend class="auto-style2">Report Query:</legend>
-                <table width="400px">
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
-                                <asp:ListItem>User ID</asp:ListItem>
-                                <asp:ListItem>First Name</asp:ListItem>
-                                <asp:ListItem>Last Name</asp:ListItem>
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                                <asp:ListItem>Email address</asp:ListItem>
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                            </asp:DropDownList>
-                            </td>
-                        <td>
-                            <input type="text" name="userid_search" class="auto-style1"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList2" runat="server" Width="150px">
-                                <asp:ListItem>First Name</asp:ListItem>
-                                <asp:ListItem>Last Name</asp:ListItem>
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                                <asp:ListItem>Email address</asp:ListItem>
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                <asp:ListItem>User ID</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <input type="text" name="firstname_search" class="auto-style1"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList3" runat="server" Width="150px">
-                                <asp:ListItem>Last Name</asp:ListItem>
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                                <asp:ListItem>Email address</asp:ListItem>
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                <asp:ListItem>User ID</asp:ListItem>
-                                <asp:ListItem>First Name</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <input type="text" name="lastname_search" class="auto-style1"/></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList4" runat="server" Width="150px">
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                                <asp:ListItem>Email address</asp:ListItem>
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                <asp:ListItem>User ID</asp:ListItem>
-                                <asp:ListItem>First Name</asp:ListItem>
-                                <asp:ListItem>Last Name</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <input type="text" name="group_search" class="auto-style1"/></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList5" runat="server" Width="150px">
-                                <asp:ListItem>Email address</asp:ListItem>
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                <asp:ListItem>User ID</asp:ListItem>
-                                <asp:ListItem>First Name</asp:ListItem>
-                                <asp:ListItem>Last Name</asp:ListItem>
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <input type="email" name="email_search" class="auto-style1"/></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:DropDownList ID="DropDownList6" runat="server" Width="150px">
-                                <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                <asp:ListItem>User ID</asp:ListItem>
-                                <asp:ListItem>First Name</asp:ListItem>
-                                <asp:ListItem>Last Name</asp:ListItem>
-                                <asp:ListItem>Group Affiliation</asp:ListItem>
-                                <asp:ListItem>Email address</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            <!--<input type="text" name="date_search" class="auto-style1"/></td>-->
-                            <input type="text" id="datepicker" class="auto-style1"></td>
-                    </tr>
-                </table>
-                <br>
-                <input type=button value='Submit' style="font-family:'Franklin Gothic Medium'"/>
-                <br><!--onClick="location.href='WelcomePage.aspx'"-->
-            </fieldset>
+        <div id="leftpanel">
+            <p><strong>Navigation</strong></p>
+            <ul>
+                <li><a href="NewPatient.aspx">Create New Patient</a></li>
+                <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
+                <li><a href="ReportsView.aspx">View Reports</a></li>
+                <li><a href="PostLogon.aspx">Back to Home</a></li>
+                <li><a href="WelcomePage.aspx">Sign Out</a></li>
+            </ul>
         </div>
 
-        <div id="reportlist">
-            <asp:Table ID="Table1" runat="server" BorderWidth="5px" CellPadding="5" GridLines="Both" Visible="true" Caption="Example Only">
-                <asp:TableRow runat="server" Font-Bold="True">
-                    <asp:TableCell runat="server">User ID</asp:TableCell>
-                    <asp:TableCell runat="server">First Name</asp:TableCell>
-                    <asp:TableCell runat="server">Last Name</asp:TableCell>
-                    <asp:TableCell runat="server">Group Affiliation</asp:TableCell>
-                    <asp:TableCell runat="server">Email Address:</asp:TableCell>
-                    <asp:TableCell runat="server">Date Prescribed</asp:TableCell>
-                    <asp:TableCell runat="server">Percentage Completed</asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">mmouse</asp:TableCell>
-                    <asp:TableCell runat="server">Mickey</asp:TableCell>
-                    <asp:TableCell runat="server">Mouse</asp:TableCell>
-                    <asp:TableCell runat="server">Walt Disney</asp:TableCell>
-                    <asp:TableCell runat="server">mmouse@dworld.com</asp:TableCell>
-                    <asp:TableCell runat="server">11/06/16</asp:TableCell>
-                    <asp:TableCell runat="server">100%</asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
+        <div id="pagecontent">
+            <form id="form1" runat="server">
+                <div id="query">
+                    <fieldset style="width: 400px" dir="ltr">
+                        <legend align="center">Report Query:</legend>
+                        <table width="400px">
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                    </asp:DropDownList>
+                                    </td>
+                                <td>
+                                    <input type="text" name="userid_search" class="auto-style1"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList2" runat="server" Width="150px">
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <input type="text" name="firstname_search" class="auto-style1"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList3" runat="server" Width="150px">
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <input type="text" name="lastname_search" class="auto-style1"/></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList4" runat="server" Width="150px">
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <input type="text" name="group_search" class="auto-style1"/></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList5" runat="server" Width="150px">
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <input type="email" name="email_search" class="auto-style1"/></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList6" runat="server" Width="150px">
+                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
+                                        <asp:ListItem>User ID</asp:ListItem>
+                                        <asp:ListItem>First Name</asp:ListItem>
+                                        <asp:ListItem>Last Name</asp:ListItem>
+                                        <asp:ListItem>Group Affiliation</asp:ListItem>
+                                        <asp:ListItem>Email address</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <!--<input type="text" name="date_search" class="auto-style1"/></td>-->
+                                    <input type="text" name="date_search" class="auto-style1"/></td>
+                                    <!--should be:
+                                        <input type="text" id="datepicker" class="auto-style1"></td>
+                                        but only if that is the "type" in the drop-down selection
+                                        -->
+                            </tr>
+                        </table>
+                        <br/>
+                        <input type=button value='Submit'/>
+                        <br/><!--onClick="location.href='WelcomePage.aspx'"-->
+                    </fieldset>
+                </div>
+
+                <div id="reportlist">
+                    <asp:Table ID="Table1" runat="server" BorderWidth="5px" CellPadding="5" GridLines="Both" Visible="true" Caption="Example Only">
+                        <asp:TableRow runat="server" Font-Bold="True">
+                            <asp:TableCell runat="server">User ID</asp:TableCell>
+                            <asp:TableCell runat="server">First Name</asp:TableCell>
+                            <asp:TableCell runat="server">Last Name</asp:TableCell>
+                            <asp:TableCell runat="server">Group Affiliation</asp:TableCell>
+                            <asp:TableCell runat="server">Email Address:</asp:TableCell>
+                            <asp:TableCell runat="server">Date Prescribed</asp:TableCell>
+                            <asp:TableCell runat="server">Percentage Completed</asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow runat="server">
+                            <asp:TableCell runat="server">mmouse</asp:TableCell>
+                            <asp:TableCell runat="server">Mickey</asp:TableCell>
+                            <asp:TableCell runat="server">Mouse</asp:TableCell>
+                            <asp:TableCell runat="server">Walt Disney</asp:TableCell>
+                            <asp:TableCell runat="server">mmouse@dworld.com</asp:TableCell>
+                            <asp:TableCell runat="server">11/06/16</asp:TableCell>
+                            <asp:TableCell runat="server">100%</asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </div>
+            </form>
         </div>
-    </form>
+
+        <div id="footer" style="text-align:center">
+            <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Middle" Height="76px" BorderWidth="2px"/>
+            <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="76px" ImageAlign="Middle" BorderWidth="2px" />
+        </div>
+    </div>
 
 </body>
 </html>
