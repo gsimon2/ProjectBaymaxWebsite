@@ -11,9 +11,9 @@
         #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
         #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
-        #leftpanel{width:200px; height:1000px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
-        #pagecontent{height : 1000px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
         #welcome{padding-top:50px;margin-left:90px;font-size:larger;font-family:'Franklin Gothic Medium';float:left}
         #welcome img{margin-left:100px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
@@ -55,8 +55,6 @@
             <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Middle" Height="76px" BorderWidth="2px"/>
             <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="76px" ImageAlign="Middle" BorderWidth="2px" />
         </div>
-
-
     </div>
 </body>
 </html>
