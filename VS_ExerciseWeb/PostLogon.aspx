@@ -13,6 +13,7 @@
         #header h1{font-size:60px; text-align:center}
         #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
+        #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
         #welcome{padding-top:50px;margin-left:90px;font-size:larger;float:left}
         #welcome img{margin-left:100px}
@@ -33,10 +34,10 @@
         <div id="leftpanel">
             <p><strong>Navigation</strong></p>
             <ul>
-                <li><a href="NewPatient.aspx" style="color:cornflowerblue">Create New Patient</a></li>
-                <li><a href="ManagePatients.aspx" style="color:cornflowerblue">Assign Workout Plan</a></li>
-                <li><a href="ReportsView.aspx" style="color:cornflowerblue">View Reports</a></li>
-                <li><a href="WelcomePage.aspx" style="color:cornflowerblue">Sign Out</a></li>
+                <li><a href="NewPatient.aspx">Create New Patient</a></li>
+                <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
+                <li><a href="ReportsView.aspx">View Reports</a></li>
+                <li><a href="WelcomePage.aspx">Sign Out</a></li>
             
             </ul>
         </div>
@@ -44,8 +45,8 @@
         <div id="pagecontent">
             <div id="welcome">
                 
-                <asp:label runat="server" id="WelcomeMessage" text= "label" ></asp:label>
-                <br />
+                <asp:label runat="server" id="WelcomeMessage" text="label" style="font-size:larger"></asp:label>
+                <br /><br />
                 <!-- <p >Hello, [user's name]!</p><br> -->
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Machine_image.png" Height="300px" BorderWidth="2px"/>
             </div>

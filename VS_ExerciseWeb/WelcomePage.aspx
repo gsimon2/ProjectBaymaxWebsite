@@ -55,8 +55,7 @@
                         </tr>
                     </table>
                     <br/>
-                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "login" id ="Login_Button"/>
-                    <!--<input type=button onClick="location.href='PostLogon.aspx'" value='Login' />-->
+                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "Login" id ="Login_Button"/>
                     <br/>
                 </fieldset>
             </div>

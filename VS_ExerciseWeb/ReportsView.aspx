@@ -29,7 +29,8 @@
         #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
         #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
-        #leftpanel p{margin-top:50px}        
+        #leftpanel p{margin-top:50px}
+        #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
         #query{margin-top:50px;margin-left:180px;float:left}
         #reportlist{margin-top:50px;float:left}
@@ -42,7 +43,7 @@
 <body>
     <div id="entire">
         <div id="header">
-            <h1>Shoulder Exercise System</h1>
+            <h1>Orthopaedic Exercise System</h1>
         </div>
         <br/>
 

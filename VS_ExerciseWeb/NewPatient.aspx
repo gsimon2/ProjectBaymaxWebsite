@@ -13,6 +13,7 @@
         #header h1{font-size:60px; text-align:center}
         #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
+        #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
         #patientform{margin-top:50px;margin-left:180px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
@@ -26,7 +27,7 @@
     <div id="entire">
         <div id="header">
             <br />
-            <h1 class="auto-style1">Shoulder Exercise System</h1>
+            <h1 class="auto-style1">Orthopaedic Exercise System</h1>
         </div>
         <br />
 
