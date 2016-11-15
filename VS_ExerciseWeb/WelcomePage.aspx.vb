@@ -47,6 +47,7 @@ Partial Class WelcomePage
                 rd.Read()
                 GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
                 Session("UserName") = GlobalVars.CurrentUserFirstName
+                Session("UserGroup") = rd.GetValue(6).ToString()
                 'MsgBox(GlobalVars.CurrentUserFirstName)
 
                 'Transfer to post logon webpage

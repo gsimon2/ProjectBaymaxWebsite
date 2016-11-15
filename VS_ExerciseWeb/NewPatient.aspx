@@ -18,8 +18,17 @@
         #patientform{margin-top:50px;margin-left:180px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{height: 116px;  margin-top: 12px}
-        .auto-style3{width: 200px}
+        .auto-style3{
+            width: 236px
+        }
         a:hover{background-color: yellow}
+        .auto-style4 {
+            width: 236px;
+            height: 34px;
+        }
+        .auto-style5 {
+            height: 34px;
+        }
     </style>
 </head>
 
@@ -49,33 +58,43 @@
                 <form id="form1" runat="server" style="text-align:left">
                     <fieldset style="width: 400px" dir="ltr">
                         <legend align="center">Patient information:</legend>
-                        <table width="400px">
+                        <table style="width: 537px">
                             <tr>
-                                <td class="auto-style3">Patient name:</td>
-                                <td>
-                                    <asp:TextBox ID="Patientname_text" runat="server" Width="200px"></asp:TextBox></td>
+                                <td class="auto-style4">Patient First Name:</td>
+                                <td class="auto-style5">
+                                    <asp:TextBox ID="PatientFirstName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>                    
                             <tr>
-                                <td class="auto-style3">Patient ID:</td>
+                                <td class="auto-style3">Patient Last Name:</td>
                                 <td>
-                                    <asp:TextBox ID="UserID_text" runat="server" Width="200px"></asp:TextBox></td>
+                                    <asp:TextBox ID="PatientLastName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style3">Set password:</td>
+                                <td class="auto-style3">Patient Middle Name:</td>
                                 <td>
-                                    <asp:TextBox ID="Password_text" TextMode="Password" runat="server" Width="200px"></asp:TextBox></td>
+                                    <asp:TextBox ID="PatientMiddleName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style3">Email address:</td>
+                                <td class="auto-style3">Set Password:</td>
                                 <td>
-                                    <asp:TextBox ID="Email_text" runat="server" Width="200px"></asp:TextBox></td>
+                                    <asp:TextBox ID="Password_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style3">Group affiliation:</td>
+                                <td class="auto-style3">Confirm Pasword:</td>
                                 <td>
-                                    <asp:TextBox ID="Group_text" runat="server" Width="200px"></asp:TextBox></td>
+                                    <asp:TextBox ID="ConfirmPassword_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
                             </tr>
-                        </table>
+                            <tr>
+                                <td class="auto-style3">Patient Phone:</td>
+                                <td>
+                                    <asp:TextBox ID="Phone_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Patient Email:</td>
+                                <td>
+                                    <asp:TextBox ID="Email_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            </table>
                         <br/>
                         <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
                         <!--<input type=button onClick="location.href='WelcomePage.aspx'" value='Submit'/>-->
