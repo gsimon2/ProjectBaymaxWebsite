@@ -63,8 +63,10 @@
         #workoutform{margin-top:50px;margin-left:40px;float:left}
         #checkboxes span{font-size:smaller;font-style:italic}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
-        .auto-style1{width: 200px}
         a:hover{background-color: yellow}
+        #form1 {
+            height: 1162px;
+        }
     </style>
 </head>
 
@@ -93,50 +95,134 @@
                         <col width="174">
                         <col width="500">
                         <tr>
-                            <td>Patient Name:</td>
+                            <td>Filter by First Patient Name:</td>
                             <td><asp:TextBox ID="NameText" runat="server" Width="240px"></asp:TextBox></td>
                         </tr>
                         <tr>
-                            <td>Patient Login Number:</td>
-                            <td><asp:TextBox ID="NumberText" runat="server" Width="240px"></asp:TextBox></td>
+                            <td>Select a Patient:</td>
+                            <td>
+                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                                </asp:DropDownList>
+                            </td>
                         </tr>
                         <tr>
                             <td>Date-Time Prescription Entered (MM/DD/YYYY):</td>
                             <td><input type="text" id="datepicker" runat="server" style="width:240px"></td>
                                 <!--<asp:TextBox ID="TextBox1" runat="server" Width="240px"></asp:TextBox>-->
-                            </td>
+                            
                         </tr>
                         <tr>
                             <td style="position:absolute">Exercises to be Performed:</td>
                             <td>
+                                 
                                 <div id="checkboxes">
-                                    <input id="Checkbox1" type="checkbox" onclick="ShowHideTextBox(this, 'Sets1', 'Reps1', 'ROM1', 'Weight1')" />Supraspinatus
-                                    <br /><span id="Sets1" style="color:green"></span>&nbsp;<span id="Reps1" style="color:crimson"></span>&nbsp;<span id="ROM1" style="color:mediumblue"></span>&nbsp;<span id="Weight1" style="color:darkorchid"></span>
+                                    <asp:CheckBox runat = "server" id="Checkbox1"  OnCheckedChanged="Checkbox1_CheckedChanged" type="checkbox"  AutoPostBack="True" />Supraspinatus
                                     <br />
-                                    <input id="Checkbox2" type="checkbox" onclick="ShowHideTextBox(this, 'Sets2', 'Reps2', 'ROM2', 'Weight2')" />Infraspinatus
-                                    <br /><span id="Sets2" style="color:green"></span>&nbsp;<span id="Reps2" style="color:crimson"></span>&nbsp;<span id="ROM2" style="color:mediumblue"></span>&nbsp;<span id="Weight2" style="color:darkorchid"></span>
+                                    <asp:Label ID="Sets1" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets1Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps1" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps1Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM1" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM1Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight1" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight1Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
                                     <br />
-                                    <input id="Checkbox3" type="checkbox" onclick="ShowHideTextBox(this, 'Sets3', 'Reps3', 'ROM3', 'Weight3')" />Teres Minor
-                                    <br /><span id="Sets3" style="color:green"></span>&nbsp;<span id="Reps3" style="color:crimson"></span>&nbsp;<span id="ROM3" style="color:mediumblue"></span>&nbsp;<span id="Weight3" style="color:darkorchid"></span>
+
+                                    <asp:CheckBox runat = "server" id="Checkbox2"  OnCheckedChanged="Checkbox2_CheckedChanged" type="checkbox"  AutoPostBack="True" />Infraspinatus
                                     <br />
-                                    <input id="Checkbox4" type="checkbox" onclick="ShowHideTextBox(this, 'Sets4', 'Reps4', 'ROM4', 'Weight4')" />Subscapularis
-                                    <br /><span id="Sets4" style="color:green"></span>&nbsp;<span id="Reps4" style="color:crimson"></span>&nbsp;<span id="ROM4" style="color:mediumblue"v></span>&nbsp;<span id="Weight4" style="color:darkorchid"></span>
+                                    <asp:Label ID="Sets2" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets2Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps2" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps2Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM2" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM2Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight2" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight2Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
                                     <br />
-                                    <input id="Checkbox5" type="checkbox" onclick="ShowHideTextBox(this, 'Sets5', 'Reps5', 'ROM5', 'Weight5')" />Shoulder Flexion
-                                    <br /><span id="Sets5" style="color:green"></span>&nbsp;<span id="Reps5" style="color:crimson"></span>&nbsp;<span id="ROM5" style="color:mediumblue"></span>&nbsp;<span id="Weight5" style="color:darkorchid"></span>
+
+                                    <asp:CheckBox runat = "server" id="Checkbox3"  OnCheckedChanged="Checkbox3_CheckedChanged" type="checkbox"  AutoPostBack="True" />Teres Minor
                                     <br />
-                                    <input id="Checkbox6" type="checkbox" onclick="ShowHideTextBox(this, 'Sets6', 'Reps6', 'ROM6', 'Weight6')" />Shoulder Extension
-                                    <br /><span id="Sets6" style="color:green"></span>&nbsp;<span id="Reps6" style="color:crimson"></span>&nbsp;<span id="ROM6" style="color:mediumblue"></span>&nbsp;<span id="Weight6" style="color:darkorchid"></span>
+                                    <asp:Label ID="Sets3" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets3Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps3" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps3Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM3" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM3Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight3" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight3Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
                                     <br />
-                                    <input id="Checkbox7" type="checkbox" onclick="ShowHideTextBox(this, 'Sets7', 'Reps7', 'ROM7', 'Weight7')" />Shoulder Glide
-                                    <br /><span id="Sets7" style="color:green"></span>&nbsp;<span id="Reps7" style="color:crimson"></span>&nbsp;<span id="ROM7" style="color:mediumblue"></span>&nbsp;<span id="Weight7" style="color:darkorchid"></span>
+
+                                    <asp:CheckBox runat = "server" id="Checkbox4"  OnCheckedChanged="Checkbox4_CheckedChanged" type="checkbox"  AutoPostBack="True" />Subscapularis
                                     <br />
-                                    <input id="Checkbox8" type="checkbox" onclick="ShowHideTextBox(this, 'Sets8', 'Reps8', 'ROM8', 'Weight8')" />Scapular Protraction
-                                    <br /><span id="Sets8" style="color:green"></span>&nbsp;<span id="Reps8" style="color:crimson"></span>&nbsp;<span id="ROM8" style="color:mediumblue"></span>&nbsp;<span id="Weight8" style="color:darkorchid"></span>
+                                    <asp:Label ID="Sets4" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets4Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps4" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps4Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM4" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM4Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight4" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight4Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
                                     <br />
-                                    <input id="Checkbox9" type="checkbox" onclick="ShowHideTextBox(this, 'Sets9', 'Reps9', 'ROM9', 'Weight9')" />Rowing
-                                    <br /><span id="Sets9" style="color:green"></span>&nbsp;<span id="Reps9" style="color:crimson"></span>&nbsp;<span id="ROM9" style="color:mediumblue"></span>&nbsp;<span id="Weight9" style="color:darkorchid"></span>
-                                    <br />  
+
+                                    <asp:CheckBox runat = "server" id="Checkbox5"  OnCheckedChanged="Checkbox5_CheckedChanged" type="checkbox"  AutoPostBack="True" />Shoulder Flexion
+                                    <br />
+                                    <asp:Label ID="Sets5" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets5Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps5" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps5Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM5" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM5Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight5" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight5Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <br />
+
+                                    <asp:CheckBox runat = "server" id="Checkbox6"  OnCheckedChanged="Checkbox6_CheckedChanged" type="checkbox"  AutoPostBack="True" />Shoulder Extension
+                                    <br />
+                                    <asp:Label ID="Sets6" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets6Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps6" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps6Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM6" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM6Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight6" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight6Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <br />
+
+                                    <asp:CheckBox runat = "server" id="Checkbox7"  OnCheckedChanged="Checkbox7_CheckedChanged" type="checkbox"  AutoPostBack="True" />Shoulder Glide
+                                    <br />
+                                    <asp:Label ID="Sets7" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets7Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps7" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps7Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM7" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM7Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight7" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight7Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <br />
+
+                                    <asp:CheckBox runat = "server" id="Checkbox8"  OnCheckedChanged="Checkbox8_CheckedChanged" type="checkbox"  AutoPostBack="True" />Scapular Protraction
+                                    <br />
+                                    <asp:Label ID="Sets8" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets8Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps8" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps8Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM8" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM8Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight8" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight8Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <br />
+
+                                    <asp:CheckBox runat = "server" id="Checkbox9"  OnCheckedChanged="Checkbox9_CheckedChanged" type="checkbox"  AutoPostBack="True" />Rowing
+                                    <br />
+                                    <asp:Label ID="Sets9" runat="server" ForeColor="#006600" Text="Sets" Visible="False"></asp:Label>
+                                    <asp:TextBox ID="Sets9Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Reps9" runat="server"  style="color:crimson" Visible="False">Reps</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Reps9Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="ROM9" runat="server"  style="color:mediumblue" Visible="False">Max RoM</asp:Label>&nbsp;
+                                    <asp:TextBox ID="ROM9Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <asp:Label id="Weight9" runat="server"  style="color:darkorchid" Visible="False">Weight</asp:Label>&nbsp;
+                                    <asp:TextBox ID="Weight9Text" runat="server" Width="40px" Visible="False"></asp:TextBox>
+                                    <br />
                                 </div>
                             </td>
                         </tr>
