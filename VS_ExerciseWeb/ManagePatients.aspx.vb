@@ -103,9 +103,31 @@ UpdateDropDown_Error:
     End Sub
 
     Protected Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
-        If Checkbox1.Checked = True Then
-            MsgBox(Reps1.Text)
+        On Error GoTo SubmitButton_Click_Error
+        Dim con As New SqlConnection
+        Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        Dim cmd As New SqlCommand
+        Dim rd As SqlDataReader
+
+        Dim InsertInto As String = "INSERT INTO Prescribed_Works("
+        Dim Values As String = " Values("
+
+        If Checkbox1.Checked Then
+
+        Else
+
         End If
+
+
+
+
+
+SubmitButton_Click_Exit:
+        On Error GoTo 0
+        Exit Sub
+SubmitButton_Click_Error:
+        MsgBox("Error: " & Err.Description, MsgBoxStyle.Information, WebsiteName + " - Manage Patients")
+        Resume SubmitButton_Click_Exit
     End Sub
 
     Protected Sub Checkbox1_CheckedChanged(sender As Object, e As EventArgs) Handles Checkbox1.CheckedChanged
