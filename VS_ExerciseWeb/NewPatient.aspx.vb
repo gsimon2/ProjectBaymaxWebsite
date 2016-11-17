@@ -2,6 +2,7 @@
 
 Partial Class NewPatient
     Inherits System.Web.UI.Page
+    Dim WebsiteName As String = "ProjectBaymax.com"
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If CType(Session.Item("UserID"), String) = "" Then
@@ -17,7 +18,7 @@ Partial Class NewPatient
         Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
         Dim cmd As New SqlCommand
         Dim rd As SqlDataReader
-        Dim WebsiteName As String = "ProjectBaymax.com"
+
 
         Dim strPatientFirstName As String
         Dim strPatientMiddleName As String
@@ -41,17 +42,17 @@ Partial Class NewPatient
 
         'Check for required field values
         If strPatientFirstName = "" Then
-            MsgBox("Please enter a first name for the patient", MsgBoxStyle.Information, WebsiteName + " - New Patient")
+            alert("Please enter a first name for the patient")
             GoTo SubmitButton_Click_Exit
         End If
 
         If strPatientLastName = "" Then
-            MsgBox("Please enter a last name for the patient", MsgBoxStyle.Information, WebsiteName + " - New Patient")
+            alert("Please enter a last name for the patient")
             GoTo SubmitButton_Click_Exit
         End If
 
         If strPassword = "" Then
-            MsgBox("Please enter a password for the patient", MsgBoxStyle.Information, WebsiteName + " - New Patient")
+            alert("Please enter a password for the patient")
             GoTo SubmitButton_Click_Exit
         End If
 
@@ -67,7 +68,6 @@ Partial Class NewPatient
         If rd.HasRows Then
             rd.Read()
             intUserID = rd.GetValue(0) + 1
-            'MsgBox(intUserID)
         End If
         rd.Close()
 
@@ -116,7 +116,7 @@ Partial Class NewPatient
         cmd.CommandText = "INSERT INTO Demographics([UserID], [FirstName], [LastName], [MiddleName], [PrimaryPhone], [Email], [OrganizationID], [Role]) Values('" + Str(intUserID) + "', '" + strPatientFirstName + "', '" + strPatientLastName + "', '" + strPatientMiddleName + "', '" + strPhone + "', '" + strEmail + "', '" + strGroup + "', '4')"
         cmd.ExecuteNonQuery()
 
-        MsgBox("New Patient Added! UserName = " + strUserName, MsgBoxStyle.Information, WebsiteName + " - New Patient")
+        alert("New Patient Added! UserName = " + strUserName)
 
 SubmitButton_Click_Exit:
         On Error GoTo 0
@@ -127,4 +127,16 @@ SubmitButton_Click_Error:
         Resume SubmitButton_Click_Exit
 
     End Sub
+
+    Private Sub alert(ByVal alert_message As String)
+        Dim msg As String
+        msg = "<script language='javascript'>"
+
+        ' The 100 ms delay prevents a blank page during alert, in Chrome and FireFox:
+        msg += "setTimeout(function(){alert('" & WebsiteName & "\n\n" & alert_message & "')}, 100);"
+
+        msg += "<" & "/script>"
+        Response.Write(msg)
+    End Sub
+
 End Class

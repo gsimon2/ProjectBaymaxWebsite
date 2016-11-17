@@ -2,7 +2,7 @@
 
 Partial Class WelcomePage
     Inherits System.Web.UI.Page
-
+    Dim WebsiteName As String = "ProjectBaymax.com"
 
 
     Sub Login_Button_Click()
@@ -15,11 +15,11 @@ Partial Class WelcomePage
         
         'Make sure text has been entered for both fields
         If UsernameTextBox.Text = "" Then
-            MsgBox("Please enter a username.", MsgBoxStyle.Information, WebsiteName + " - Login")
+            alert("Please enter a username.")
             Exit Sub
         End If
         If PasswordTextBox.Text = "" Then
-            MsgBox("Please enter a password.", MsgBoxStyle.Information, WebsiteName + " - Login")
+            alert("Please enter a password.")
             Exit Sub
         End If
 
@@ -37,7 +37,6 @@ Partial Class WelcomePage
             rd.Read()
             GlobalVars.CurrentUserID = rd.GetValue(2).ToString()
             Session("UserID") = GlobalVars.CurrentUserID
-            'MsgBox(GlobalVars.CurrentUserID)
             rd.Close()
 
             'Harvest User Info - UserFirstName from Demographics table
@@ -48,13 +47,12 @@ Partial Class WelcomePage
                 GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
                 Session("UserName") = GlobalVars.CurrentUserFirstName
                 Session("UserGroup") = rd.GetValue(6).ToString()
-                'MsgBox(GlobalVars.CurrentUserFirstName)
 
                 'Transfer to post logon webpage
                 Server.Transfer("PostLogon.aspx", True)
 
             Else
-                MsgBox("No Demographics record found for " & UsernameTextBox.Text & "!", MsgBoxStyle.Information, WebsiteName + " - Login")
+                alert("No Demographics record found for " & UsernameTextBox.Text & "!")
                 GoTo Login_Button_Click_Exit
             End If
             rd.Close()
@@ -62,7 +60,7 @@ Partial Class WelcomePage
 
 
         Else
-            MsgBox("Invalid Username or Password", MsgBoxStyle.Information, WebsiteName + " - Login")
+            alert("Invalid Username or Password")
             GoTo Login_Button_Click_Exit
         End If
 
@@ -323,6 +321,16 @@ Login_Button_Click_Error:
         End Function
     End Class
 
+    Private Sub alert(ByVal alert_message As String)
+        Dim msg As String
+        msg = "<script language='javascript'>"
+
+        ' The 100 ms delay prevents a blank page during alert, in Chrome and FireFox:
+        msg += "setTimeout(function(){alert('" & WebsiteName & "\n\n" & alert_message & "')}, 100);"
+
+        msg += "<" & "/script>"
+        Response.Write(msg)
+    End Sub
 End Class
 
 

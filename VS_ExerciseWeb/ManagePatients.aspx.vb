@@ -174,10 +174,10 @@ UpdateDropDown_Error:
             cmd.CommandText = strInsertInto + strValues
             cmd.ExecuteNonQuery()
 
-            Response.Write("<script type='text/javascript'>alert('Workout Posted!');</script>")
+            alert("Workout Posted!")
 
         Else
-            Response.Write("<script type='text/javascript'>alert('Please assign atleast one exercise!');</script>")
+            alert("Please assign atleast one exercise!")
         End If
 
 SubmitButton_Click_Exit:
@@ -392,5 +392,16 @@ SubmitButton_Click_Error:
         Next
 
 
+    End Sub
+
+    Private Sub alert(ByVal alert_message As String)
+        Dim msg As String
+        msg = "<script language='javascript'>"
+
+        ' The 100 ms delay prevents a blank page during alert, in Chrome and FireFox:
+        msg += "setTimeout(function(){alert('" & WebsiteName & "\n\n" & alert_message & "')}, 100);"
+
+        msg += "<" & "/script>"
+        Response.Write(msg)
     End Sub
 End Class
