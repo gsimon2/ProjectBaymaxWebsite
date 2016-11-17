@@ -32,7 +32,7 @@
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #query{margin-top:50px;margin-left:180px;float:left}
+        #query{margin-top:50px;margin-left:130px;float:left}
         #reportlist{margin-top:50px;float:left}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{width: 200px}
@@ -61,99 +61,50 @@
         <div id="pagecontent">
             <form id="form1" runat="server">
                 <div id="query">
-                    <fieldset style="width: 400px" dir="ltr">
+                    <fieldset style="width: 480px" dir="ltr">
                         <legend align="center">Report Query:</legend>
-                        <table width="400px">
+                        <table width="500px">
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                <td>User ID:
+                                    <!--<asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
                                         <asp:ListItem>User ID</asp:ListItem>
                                         <asp:ListItem>First Name</asp:ListItem>
                                         <asp:ListItem>Last Name</asp:ListItem>
                                         <asp:ListItem>Group Affiliation</asp:ListItem>
                                         <asp:ListItem>Email address</asp:ListItem>
                                         <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                    </asp:DropDownList>
+                                    </asp:DropDownList>-->
                                     </td>
                                 <td>
                                     <input type="text" name="userid_search" class="auto-style1"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList2" runat="server" Width="150px">
-                                        <asp:ListItem>First Name</asp:ListItem>
-                                        <asp:ListItem>Last Name</asp:ListItem>
-                                        <asp:ListItem>Group Affiliation</asp:ListItem>
-                                        <asp:ListItem>Email address</asp:ListItem>
-                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                        <asp:ListItem>User ID</asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
+                                <td>First Name:</td>
                                 <td>
                                     <input type="text" name="firstname_search" class="auto-style1"/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList3" runat="server" Width="150px">
-                                        <asp:ListItem>Last Name</asp:ListItem>
-                                        <asp:ListItem>Group Affiliation</asp:ListItem>
-                                        <asp:ListItem>Email address</asp:ListItem>
-                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                        <asp:ListItem>User ID</asp:ListItem>
-                                        <asp:ListItem>First Name</asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
+                                <td>Last Name:</td>
                                 <td>
                                     <input type="text" name="lastname_search" class="auto-style1"/></td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList4" runat="server" Width="150px">
-                                        <asp:ListItem>Group Affiliation</asp:ListItem>
-                                        <asp:ListItem>Email address</asp:ListItem>
-                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                        <asp:ListItem>User ID</asp:ListItem>
-                                        <asp:ListItem>First Name</asp:ListItem>
-                                        <asp:ListItem>Last Name</asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
+                                <td>Group Affiliation:</td>
                                 <td>
                                     <input type="text" name="group_search" class="auto-style1"/></td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList5" runat="server" Width="150px">
-                                        <asp:ListItem>Email address</asp:ListItem>
-                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                        <asp:ListItem>User ID</asp:ListItem>
-                                        <asp:ListItem>First Name</asp:ListItem>
-                                        <asp:ListItem>Last Name</asp:ListItem>
-                                        <asp:ListItem>Group Affiliation</asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
+                                <td>Email address:</td>
                                 <td>
                                     <input type="email" name="email_search" class="auto-style1"/></td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:DropDownList ID="DropDownList6" runat="server" Width="150px">
-                                        <asp:ListItem>Date Entered (MM/DD/YYYY)</asp:ListItem>
-                                        <asp:ListItem>User ID</asp:ListItem>
-                                        <asp:ListItem>First Name</asp:ListItem>
-                                        <asp:ListItem>Last Name</asp:ListItem>
-                                        <asp:ListItem>Group Affiliation</asp:ListItem>
-                                        <asp:ListItem>Email address</asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
+                                <td>Date Entered (MM/DD/YYYY):</td>
                                 <td>
                                     <!--<input type="text" name="date_search" class="auto-style1"/></td>-->
-                                    <input type="text" name="date_search" class="auto-style1"/></td>
-                                    <!--should be:
-                                        <input type="text" id="datepicker" class="auto-style1"></td>
-                                        but only if that is the "type" in the drop-down selection
-                                        -->
+                                    <input type="text" id="datepicker" class="auto-style1"></td>
                             </tr>
                         </table>
                         <br/>
