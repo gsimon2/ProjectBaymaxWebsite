@@ -11,8 +11,7 @@ Partial Class WelcomePage
         Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
         Dim cmd As New SqlCommand
         Dim rd As SqlDataReader
-        Dim WebsiteName As String = "ProjectBaymax.com"
-        
+
         'Make sure text has been entered for both fields
         If UsernameTextBox.Text = "" Then
             alert("Please enter a username.")
