@@ -229,16 +229,16 @@
                         <tr>
                             <td>Notes for Patient:</td>
                             <td>
-                                <textarea id="PatientNotes" cols="20" name="S1" rows="2" style="width: 240px"></textarea></td>
+                                <asp:TextBox id="PatientNotes" runat="server" cols="20" name="S1" rows="2" TextMode="multiline"  style="width: 240px"></asp:TextBox>
                         </tr>
                         <tr>
                             <td>Notes for Physical Therapist:</td>
                             <td>
-                                <textarea id="TherapistNotes" cols="20" name="S2" rows="2" style="width: 240px"></textarea></td>
+                                <asp:TextBox id="TherapistNotes" runat="server" cols="20" name="S1" rows="2" TextMode="multiline"  style="width: 240px"></asp:TextBox>
                         </tr>
                         <tr>
                             <td><asp:Button ID="SubmitButton" runat="server" Text="Submit" />
-                                <asp:Button ID="ResetButton" runat="server" Text="Reset" />
+                                <asp:Button ID="ResetButton" runat="server" Text="Reset" Enabled="False" Visible="False" />
                             </td>
                         </tr>
                     </table>

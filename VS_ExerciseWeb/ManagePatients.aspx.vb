@@ -109,18 +109,76 @@ UpdateDropDown_Error:
         Dim cmd As New SqlCommand
         Dim rd As SqlDataReader
 
-        Dim InsertInto As String = "INSERT INTO Prescribed_Works("
-        Dim Values As String = " Values("
+        Dim strInsertInto As String = "INSERT INTO Prescribed_Workouts("
+        Dim strValues As String = " Values("
+        Dim hold As String
+        Dim i As Integer = 1
+        Dim intWorkoutID As Integer
+        Dim ExerciseAssigned As Boolean = False
 
-        If Checkbox1.Checked Then
+        'Connection to SQL Server
+        con.ConnectionString = strCon
+        cmd.Connection = con
+        con.Open()
 
-        Else
+        'Get Workout id for this new workout
+        cmd.CommandText = "SELECT MAX(Workout_ID) FROM Prescribed_Workouts"
+        rd = cmd.ExecuteReader
+        If rd.HasRows Then
+            rd.Read()
+            intWorkoutID = rd.GetValue(0) + 1
+            'MsgBox(intWorkoutID)
+        End If
+        rd.Close()
 
+        'Auto assign todays date if one isn't picked
+        If datepicker.Value = "" Then
+            datepicker.Value = Now()
         End If
 
+        'Build First couple non exercise related fields
+        strInsertInto = strInsertInto + "[Recipient_ID], [Prescriber_ID], [Workout_ID], [Date_Assigned], "
+        strValues = strValues + "'" + CType(Session.Item("PatientUserID"), String) + "', '" + CType(Session.Item("UserID"), String) + "', '" + Str(intWorkoutID) + "', '" + datepicker.Value + "', "
 
 
+        'Iterater through check boxes and build sql command based off of their states
+        For Each ctrl As Control In form1.Controls
+            If TypeOf ctrl Is CheckBox Then
+                'Always assign either true or false to the exercise_assigned field
+                hold = "[Exercise_" + Trim(Str(i))
+                strInsertInto = strInsertInto + hold + "_Assigned], "
+                If DirectCast(ctrl, CheckBox).Checked Then
+                    'If the exercise is assigned, the sets, reps, ROM, and weight have to be appended as well
+                    strValues = strValues + "'1', "
+                    strInsertInto = strInsertInto + hold + "_Sets], " + hold + "_Reps], " + hold + "_Weight], " + hold + "_MaxRangeOfMotion], "
+                    strValues = strValues + "'" + DirectCast(Form.FindControl("Sets" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
+                    strValues = strValues + "'" + DirectCast(Form.FindControl("Reps" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
+                    strValues = strValues + "'" + DirectCast(Form.FindControl("ROM" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
+                    strValues = strValues + "'" + DirectCast(Form.FindControl("Weight" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
+                    ExerciseAssigned = True
+                Else
+                    strValues = strValues + "'0', "
+                End If
+                i += 1
+                hold = ""
+            End If
+        Next
 
+        'Get data from the note fields
+        strInsertInto = strInsertInto + "[PatientNotes], [TherapistNotes])"
+        strValues = strValues + "'" + PatientNotes.Text + "', '" + TherapistNotes.Text + "')"
+
+
+        If ExerciseAssigned = True Then
+            'Append workout to SQL db
+            cmd.CommandText = strInsertInto + strValues
+            cmd.ExecuteNonQuery()
+
+            Response.Write("<script type='text/javascript'>alert('Workout Posted!');</script>")
+
+        Else
+            Response.Write("<script type='text/javascript'>alert('Please assign atleast one exercise!');</script>")
+        End If
 
 SubmitButton_Click_Exit:
         On Error GoTo 0
@@ -318,5 +376,21 @@ SubmitButton_Click_Error:
             Weight9.Visible = False
             Weight9Text.Visible = False
         End If
+    End Sub
+
+    Protected Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
+        NameText.Text = ""
+        datepicker.Value = ""
+
+        Dim i As Integer = 1
+        For Each ctrl As Control In form1.Controls
+            If TypeOf ctrl Is CheckBox Then
+                DirectCast(ctrl, CheckBox).Checked = False
+         
+            End If
+            i += 1
+        Next
+
+
     End Sub
 End Class
