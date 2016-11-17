@@ -15,7 +15,7 @@
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #patientform{margin-top:50px;margin-left:180px}
+        #patientform{margin-top:50px;margin-left:100px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{height: 116px;  margin-top: 12px}
         .auto-style3{
@@ -56,12 +56,12 @@
 
             <div id="patientform">
                 <form id="form1" runat="server" style="text-align:left">
-                    <fieldset style="width: 400px" dir="ltr">
+                    <fieldset style="width: 537px" dir="ltr">
                         <legend align="center">Patient information:</legend>
                         <table style="width: 537px">
                             <tr>
-                                <td class="auto-style4">Patient First Name:</td>
-                                <td class="auto-style5">
+                                <td class="auto-style3">Patient First Name:</td>
+                                <td> <!--class="auto-style5">-->
                                     <asp:TextBox ID="PatientFirstName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>                    
                             <tr>
