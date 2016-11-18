@@ -4,77 +4,109 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>New Patient - Orthopaedic Exercise System</title>
     <style>
         p {padding-left:10px}
-        #header{height:100px}
-        #header h1{font-size:40px;font-family:'Franklin Gothic Medium';text-align: center}
-        #navigation{width:200px;padding-top:8px;height:400px;background-color:powderblue;margin-top:50px;font-family:'Franklin Gothic Medium';float:left}
-        #patientform{margin-left:400px;margin-top:50px;font-family:'Franklin Gothic Medium'}
-        .auto-style2 {
-            text-align: center;
+        body{height:100%;margin:0;padding:0;background-image:url("Images/background_bgwave.jpg");background-repeat:repeat-y;background-size:100%}
+        #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
+        #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
+        #header h1{font-size:60px; text-align:center}
+        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel p{margin-top:50px}
+        #leftpanel li a{color:cornflowerblue}
+        #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #patientform{margin-top:50px;margin-left:100px}
+        #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
+        .auto-style1{height: 116px;  margin-top: 12px}
+        .auto-style3{
+            width: 236px
         }
-        .auto-style3 {
-            width: 200px;
+        a:hover{background-color: yellow}
+        .auto-style4 {
+            width: 236px;
+            height: 34px;
+        }
+        .auto-style5 {
+            height: 34px;
         }
     </style>
 </head>
 
-<body background="Images/background_bluegreen.jpeg">
-    <div id="header">
-        <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Left" Height="100px" BorderWidth="2px"/>
-        <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="100px" ImageAlign="Right" BorderWidth="2px" />
-        <br>
-        <h1>Shoulder Exercise<br>System</h1>
-    </div>
-    <br>
+<body>
+    <div id="entire">
+        <div id="header">
+            <br />
+            <h1 class="auto-style1">Orthopaedic Exercise System</h1>
+        </div>
+        <br />
 
-    <div id="navigation">
-        <p><strong>Navigation</strong></p>
-        <ul>
-            <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
-            <li><a href="ReportsView.aspx">View Reports</a></li>
-            <li><a href="WelcomePage.aspx">Sign Out</a></li>
-        </ul>
-    </div>
+        <div id="leftpanel">
+            <p><strong>Navigation</strong></p>
+            <ul>
+                <li><a href="NewPatient.aspx">Create New Patient</a></li>
+                <li><a href="ManagePatients.aspx">Assign Workout Plan</a></li>
+                <li><a href="ReportsView.aspx">View Reports</a></li>
+                <li><a href="PostLogon.aspx">Back to Home</a></li>
+                <li><a href="WelcomePage.aspx">Sign Out</a></li>
 
-    <div id="patientform">
-        <form id="form1" runat="server" style="text-align:left">
-            <fieldset style="width: 400px" dir="ltr">
-                <legend class="auto-style2">Patient information:</legend>
-                <table width="400px"><!--style="width:50%"-->
-                    <tr>
-                        <td class="auto-style3">Patient name:</td>
-                        <td>
-                            <asp:TextBox ID="Patientname_text" runat="server" Width="200px"></asp:TextBox></td>
-                    </tr>                    
-                    <tr>
-                        <td class="auto-style3">Patient ID:</td>
-                        <td>
-                            <asp:TextBox ID="UserID_text" runat="server" Width="200px"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style3">Set password:</td>
-                        <td>
-                            <asp:TextBox ID="Password_text" runat="server" Width="200px"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style3">Email address:</td>
-                        <td>
-                            <asp:TextBox ID="Email_text" runat="server" Width="200px"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style3">Group affiliation:</td>
-                        <td>
-                            <asp:TextBox ID="Group_text" runat="server" Width="200px"></asp:TextBox></td>
-                    </tr>
-                </table>
-                <br>
-                <asp:Button ID="SubmitButton" runat="server" Text="Submit" style="font-family:'Franklin Gothic Medium'" />
-                <!--<input type=button onClick="location.href='WelcomePage.aspx'" value='Submit' style="font-family:'Franklin Gothic Medium'"/>-->
-                <br>
-            </fieldset>
-        </form>
+            </ul>
+        </div>
+
+        <div id="pagecontent">
+
+            <div id="patientform">
+                <form id="form1" runat="server" style="text-align:left">
+                    <fieldset style="width: 537px" dir="ltr">
+                        <legend align="center">Patient information:</legend>
+                        <table style="width: 537px">
+                            <tr>
+                                <td class="auto-style3">Patient First Name:</td>
+                                <td> <!--class="auto-style5">-->
+                                    <asp:TextBox ID="PatientFirstName_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>                    
+                            <tr>
+                                <td class="auto-style3">Patient Last Name:</td>
+                                <td>
+                                    <asp:TextBox ID="PatientLastName_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Patient Middle Name:</td>
+                                <td>
+                                    <asp:TextBox ID="PatientMiddleName_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Set Password:</td>
+                                <td>
+                                    <asp:TextBox ID="Password_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Confirm Pasword:</td>
+                                <td>
+                                    <asp:TextBox ID="ConfirmPassword_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Patient Phone:</td>
+                                <td>
+                                    <asp:TextBox ID="Phone_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Patient Email:</td>
+                                <td>
+                                    <asp:TextBox ID="Email_text" runat="server" Width="282px"></asp:TextBox></td>
+                            </tr>
+                            </table>
+                        <br/>
+                        <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
+                        <!--<input type=button onClick="location.href='WelcomePage.aspx'" value='Submit'/>-->
+                        <br/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div id="footer" style="text-align:center">
+            <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Middle" Height="76px" BorderWidth="2px"/>
+            <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="76px" ImageAlign="Middle" BorderWidth="2px" />
+        </div>
     </div>
 </body>
 </html>

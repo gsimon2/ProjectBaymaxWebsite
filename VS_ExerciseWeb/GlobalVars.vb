@@ -1,85 +1,4 @@
-﻿Imports System.Data.SqlClient
-
-Partial Class WelcomePage
-    Inherits System.Web.UI.Page
-    Dim WebsiteName As String = "ProjectBaymax.com"
-
-    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'This keeps the page from jumping back to the top on post backs
-        Page.MaintainScrollPositionOnPostBack = True
-    End Sub
-
-    Sub Login_Button_Click()
-        On Error GoTo Login_Button_Click_Error
-        Dim con As New SqlConnection
-        Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-        Dim cmd As New SqlCommand
-        Dim rd As SqlDataReader
-
-        'Make sure text has been entered for both fields
-        If UsernameTextBox.Text = "" Then
-            alert("Please enter a username.")
-            Exit Sub
-        End If
-        If PasswordTextBox.Text = "" Then
-            alert("Please enter a password.")
-            Exit Sub
-        End If
-
-        'Connection to SQL Server
-        con.ConnectionString = strCon
-        cmd.Connection = con
-        con.Open()
-        cmd.CommandText = "SELECT * FROM Users WHERE UserName = '" & UsernameTextBox.Text & "' AND UserPasswordHash = HASHBYTES('SHA1', '" & PasswordTextBox.Text & "')"
-        rd = cmd.ExecuteReader
-
-        'Check to see if entered username and password are valid
-        If rd.HasRows Then
-
-            'Harvest User Info - UserID from Users table
-            rd.Read()
-            GlobalVars.CurrentUserID = rd.GetValue(2).ToString()
-            Session("UserID") = GlobalVars.CurrentUserID
-            rd.Close()
-
-            'Harvest User Info - UserFirstName from Demographics table
-            cmd.CommandText = "SELECT * FROM Demographics WHERE UserID = '" & GlobalVars.CurrentUserID & "'"
-            rd = cmd.ExecuteReader
-            If rd.HasRows Then
-                rd.Read()
-                GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
-                Session("UserName") = GlobalVars.CurrentUserFirstName
-                Session("UserGroup") = rd.GetValue(6).ToString()
-
-                'Transfer to post logon webpage
-                Server.Transfer("PostLogon.aspx", True)
-
-            Else
-                alert("No Demographics record found for " & UsernameTextBox.Text & "!")
-                GoTo Login_Button_Click_Exit
-            End If
-            rd.Close()
-
-
-
-        Else
-            alert("Invalid Username or Password")
-            GoTo Login_Button_Click_Exit
-        End If
-
-        
-
-
-Login_Button_Click_Exit:
-        rd.Close()
-        con.Close()
-        Exit Sub
-Login_Button_Click_Error:
-        MsgBox("Error: " & Err.Description, MsgBoxStyle.Information, WebsiteName + " - Login")
-        Resume Login_Button_Click_Exit
-    End Sub
-
-
+﻿Namespace WebApp
     Public Class GlobalVars
 
         Enum Forms
@@ -323,19 +242,7 @@ Login_Button_Click_Error:
             Return Reps
         End Function
     End Class
+End Namespace
 
-    Private Sub alert(ByVal alert_message As String)
-        Dim msg As String
-        msg = "<script language='javascript'>"
-
-        ' The 100 ms delay prevents a blank page during alert, in Chrome and FireFox:
-        msg += "setTimeout(function(){alert('" & WebsiteName & "\n\n" & alert_message & "')}, 100);"
-
-        msg += "<" & "/script>"
-        Response.Write(msg)
-    End Sub
-
-
-End Class
 
 
