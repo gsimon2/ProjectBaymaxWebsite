@@ -116,10 +116,11 @@ float:left;
                         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
                             <LocalReport ReportPath="PrescribedWorkouts.rdlc">
                                 <DataSources>
-                                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
                                 </DataSources>
                             </LocalReport>
                         </rsweb:ReportViewer>
+                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
                         <br/>
                         <input type=button value='Submit'/>
@@ -128,26 +129,6 @@ float:left;
                 </div>
 
                 <div id="reportlist">
-                    <asp:Table ID="Table1" runat="server" BorderWidth="5px" CellPadding="5" GridLines="Both" Visible="true" Caption="Example Only">
-                        <asp:TableRow runat="server" Font-Bold="True">
-                            <asp:TableCell runat="server">User ID</asp:TableCell>
-                            <asp:TableCell runat="server">First Name</asp:TableCell>
-                            <asp:TableCell runat="server">Last Name</asp:TableCell>
-                            <asp:TableCell runat="server">Group Affiliation</asp:TableCell>
-                            <asp:TableCell runat="server">Email Address:</asp:TableCell>
-                            <asp:TableCell runat="server">Date Prescribed</asp:TableCell>
-                            <asp:TableCell runat="server">Percentage Completed</asp:TableCell>
-                        </asp:TableRow>
-                        <asp:TableRow runat="server">
-                            <asp:TableCell runat="server">mmouse</asp:TableCell>
-                            <asp:TableCell runat="server">Mickey</asp:TableCell>
-                            <asp:TableCell runat="server">Mouse</asp:TableCell>
-                            <asp:TableCell runat="server">Walt Disney</asp:TableCell>
-                            <asp:TableCell runat="server">mmouse@dworld.com</asp:TableCell>
-                            <asp:TableCell runat="server">11/06/16</asp:TableCell>
-                            <asp:TableCell runat="server">100%</asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
                 </div>
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             </form>

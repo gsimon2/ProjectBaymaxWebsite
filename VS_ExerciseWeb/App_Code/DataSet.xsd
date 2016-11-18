@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ProjectBaymax_DbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjectBaymax_DbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ProjectBaymax_DbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectBaymax_DbConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Demographics.FirstName, Demographics.LastName, Prescribed_Workouts.*
+FROM   Demographics INNER JOIN
+             Prescribed_Workouts ON Demographics.UserID = Prescribed_Workouts.Recipient_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Recipient_ID" DataSetColumn="Recipient_ID" />
+              <Mapping SourceColumn="Prescriber_ID" DataSetColumn="Prescriber_ID" />
+              <Mapping SourceColumn="Workout_ID" DataSetColumn="Workout_ID" />
+              <Mapping SourceColumn="Date_Assigned" DataSetColumn="Date_Assigned" />
+              <Mapping SourceColumn="Exercise_1_Assigned" DataSetColumn="Exercise_1_Assigned" />
+              <Mapping SourceColumn="Exercise_1_Name" DataSetColumn="Exercise_1_Name" />
+              <Mapping SourceColumn="Exercise_1_Sets" DataSetColumn="Exercise_1_Sets" />
+              <Mapping SourceColumn="Exercise_1_Reps" DataSetColumn="Exercise_1_Reps" />
+              <Mapping SourceColumn="Exercise_1_Weight" DataSetColumn="Exercise_1_Weight" />
+              <Mapping SourceColumn="Exercise_1_MaxRangeOfMotion" DataSetColumn="Exercise_1_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_2_Assigned" DataSetColumn="Exercise_2_Assigned" />
+              <Mapping SourceColumn="Exercise_2_Name" DataSetColumn="Exercise_2_Name" />
+              <Mapping SourceColumn="Exercise_2_Sets" DataSetColumn="Exercise_2_Sets" />
+              <Mapping SourceColumn="Exercise_2_Reps" DataSetColumn="Exercise_2_Reps" />
+              <Mapping SourceColumn="Exercise_2_Weight" DataSetColumn="Exercise_2_Weight" />
+              <Mapping SourceColumn="Exercise_2_MaxRangeOfMotion" DataSetColumn="Exercise_2_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_3_Assigned" DataSetColumn="Exercise_3_Assigned" />
+              <Mapping SourceColumn="Exercise_3_Name" DataSetColumn="Exercise_3_Name" />
+              <Mapping SourceColumn="Exercise_3_Sets" DataSetColumn="Exercise_3_Sets" />
+              <Mapping SourceColumn="Exercise_3_Reps" DataSetColumn="Exercise_3_Reps" />
+              <Mapping SourceColumn="Exercise_3_Weight" DataSetColumn="Exercise_3_Weight" />
+              <Mapping SourceColumn="Exercise_3_MaxRangeOfMotion" DataSetColumn="Exercise_3_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_4_Assigned" DataSetColumn="Exercise_4_Assigned" />
+              <Mapping SourceColumn="Exercise_4_Name" DataSetColumn="Exercise_4_Name" />
+              <Mapping SourceColumn="Exercise_4_Sets" DataSetColumn="Exercise_4_Sets" />
+              <Mapping SourceColumn="Exercise_4_Reps" DataSetColumn="Exercise_4_Reps" />
+              <Mapping SourceColumn="Exercise_4_Weight" DataSetColumn="Exercise_4_Weight" />
+              <Mapping SourceColumn="Exercise_4_MaxRangeOfMotion" DataSetColumn="Exercise_4_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_5_Assigned" DataSetColumn="Exercise_5_Assigned" />
+              <Mapping SourceColumn="Exercise_5_Name" DataSetColumn="Exercise_5_Name" />
+              <Mapping SourceColumn="Exercise_5_Sets" DataSetColumn="Exercise_5_Sets" />
+              <Mapping SourceColumn="Exercise_5_Reps" DataSetColumn="Exercise_5_Reps" />
+              <Mapping SourceColumn="Exercise_5_Weight" DataSetColumn="Exercise_5_Weight" />
+              <Mapping SourceColumn="Exercise_5_MaxRangeOfMotion" DataSetColumn="Exercise_5_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_6_Assigned" DataSetColumn="Exercise_6_Assigned" />
+              <Mapping SourceColumn="Exercise_6_Name" DataSetColumn="Exercise_6_Name" />
+              <Mapping SourceColumn="Exercise_6_Sets" DataSetColumn="Exercise_6_Sets" />
+              <Mapping SourceColumn="Exercise_6_Reps" DataSetColumn="Exercise_6_Reps" />
+              <Mapping SourceColumn="Exercise_6_Weight" DataSetColumn="Exercise_6_Weight" />
+              <Mapping SourceColumn="Exercise_6_MaxRangeOfMotion" DataSetColumn="Exercise_6_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_7_Assigned" DataSetColumn="Exercise_7_Assigned" />
+              <Mapping SourceColumn="Exercise_7_Name" DataSetColumn="Exercise_7_Name" />
+              <Mapping SourceColumn="Exercise_7_Sets" DataSetColumn="Exercise_7_Sets" />
+              <Mapping SourceColumn="Exercise_7_Reps" DataSetColumn="Exercise_7_Reps" />
+              <Mapping SourceColumn="Exercise_7_Weight" DataSetColumn="Exercise_7_Weight" />
+              <Mapping SourceColumn="Exercise_7_MaxRangeOfMotion" DataSetColumn="Exercise_7_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_8_Assigned" DataSetColumn="Exercise_8_Assigned" />
+              <Mapping SourceColumn="Exercise_8_Name" DataSetColumn="Exercise_8_Name" />
+              <Mapping SourceColumn="Exercise_8_Sets" DataSetColumn="Exercise_8_Sets" />
+              <Mapping SourceColumn="Exercise_8_Reps" DataSetColumn="Exercise_8_Reps" />
+              <Mapping SourceColumn="Exercise_8_Weight" DataSetColumn="Exercise_8_Weight" />
+              <Mapping SourceColumn="Exercise_8_MaxRangeOfMotion" DataSetColumn="Exercise_8_MaxRangeOfMotion" />
+              <Mapping SourceColumn="Exercise_9_Assigned" DataSetColumn="Exercise_9_Assigned" />
+              <Mapping SourceColumn="Exercise_9_Name" DataSetColumn="Exercise_9_Name" />
+              <Mapping SourceColumn="Exercise_9_Sets" DataSetColumn="Exercise_9_Sets" />
+              <Mapping SourceColumn="Exercise_9_Reps" DataSetColumn="Exercise_9_Reps" />
+              <Mapping SourceColumn="Exercise_9_Weight" DataSetColumn="Exercise_9_Weight" />
+              <Mapping SourceColumn="Exercise_9_MaxRangeOfMotion" DataSetColumn="Exercise_9_MaxRangeOfMotion" />
+              <Mapping SourceColumn="PatientNotes" DataSetColumn="PatientNotes" />
+              <Mapping SourceColumn="TherapistNotes" DataSetColumn="TherapistNotes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet" msprop:Generator_DataSetName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Recipient_ID" msprop:Generator_ColumnVarNameInTable="columnRecipient_ID" msprop:Generator_ColumnPropNameInRow="Recipient_ID" msprop:Generator_ColumnPropNameInTable="Recipient_IDColumn" msprop:Generator_UserColumnName="Recipient_ID" type="xs:int" />
+              <xs:element name="Prescriber_ID" msprop:Generator_ColumnVarNameInTable="columnPrescriber_ID" msprop:Generator_ColumnPropNameInRow="Prescriber_ID" msprop:Generator_ColumnPropNameInTable="Prescriber_IDColumn" msprop:Generator_UserColumnName="Prescriber_ID" type="xs:int" />
+              <xs:element name="Workout_ID" msprop:Generator_ColumnVarNameInTable="columnWorkout_ID" msprop:Generator_ColumnPropNameInRow="Workout_ID" msprop:Generator_ColumnPropNameInTable="Workout_IDColumn" msprop:Generator_UserColumnName="Workout_ID" type="xs:int" />
+              <xs:element name="Date_Assigned" msprop:Generator_ColumnVarNameInTable="columnDate_Assigned" msprop:Generator_ColumnPropNameInRow="Date_Assigned" msprop:Generator_ColumnPropNameInTable="Date_AssignedColumn" msprop:Generator_UserColumnName="Date_Assigned" type="xs:dateTime" />
+              <xs:element name="Exercise_1_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_1_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_1_AssignedColumn" msprop:Generator_UserColumnName="Exercise_1_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_1_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Name" msprop:Generator_ColumnPropNameInRow="Exercise_1_Name" msprop:Generator_ColumnPropNameInTable="Exercise_1_NameColumn" msprop:Generator_UserColumnName="Exercise_1_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_1_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_1_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_1_SetsColumn" msprop:Generator_UserColumnName="Exercise_1_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_1_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_1_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_1_RepsColumn" msprop:Generator_UserColumnName="Exercise_1_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_1_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_1_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_1_WeightColumn" msprop:Generator_UserColumnName="Exercise_1_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_1_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_1_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_1_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_1_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_1_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_2_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_2_AssignedColumn" msprop:Generator_UserColumnName="Exercise_2_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_2_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Name" msprop:Generator_ColumnPropNameInRow="Exercise_2_Name" msprop:Generator_ColumnPropNameInTable="Exercise_2_NameColumn" msprop:Generator_UserColumnName="Exercise_2_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_2_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_2_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_2_SetsColumn" msprop:Generator_UserColumnName="Exercise_2_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_2_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_2_RepsColumn" msprop:Generator_UserColumnName="Exercise_2_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_2_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_2_WeightColumn" msprop:Generator_UserColumnName="Exercise_2_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_2_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_2_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_2_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_2_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_3_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_3_AssignedColumn" msprop:Generator_UserColumnName="Exercise_3_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_3_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Name" msprop:Generator_ColumnPropNameInRow="Exercise_3_Name" msprop:Generator_ColumnPropNameInTable="Exercise_3_NameColumn" msprop:Generator_UserColumnName="Exercise_3_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_3_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_3_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_3_SetsColumn" msprop:Generator_UserColumnName="Exercise_3_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_3_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_3_RepsColumn" msprop:Generator_UserColumnName="Exercise_3_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_3_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_3_WeightColumn" msprop:Generator_UserColumnName="Exercise_3_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_3_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_3_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_3_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_3_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_4_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_4_AssignedColumn" msprop:Generator_UserColumnName="Exercise_4_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_4_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Name" msprop:Generator_ColumnPropNameInRow="Exercise_4_Name" msprop:Generator_ColumnPropNameInTable="Exercise_4_NameColumn" msprop:Generator_UserColumnName="Exercise_4_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_4_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_4_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_4_SetsColumn" msprop:Generator_UserColumnName="Exercise_4_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_4_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_4_RepsColumn" msprop:Generator_UserColumnName="Exercise_4_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_4_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_4_WeightColumn" msprop:Generator_UserColumnName="Exercise_4_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_4_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_4_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_4_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_4_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_5_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_5_AssignedColumn" msprop:Generator_UserColumnName="Exercise_5_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_5_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Name" msprop:Generator_ColumnPropNameInRow="Exercise_5_Name" msprop:Generator_ColumnPropNameInTable="Exercise_5_NameColumn" msprop:Generator_UserColumnName="Exercise_5_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_5_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_5_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_5_SetsColumn" msprop:Generator_UserColumnName="Exercise_5_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_5_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_5_RepsColumn" msprop:Generator_UserColumnName="Exercise_5_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_5_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_5_WeightColumn" msprop:Generator_UserColumnName="Exercise_5_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_5_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_5_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_5_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_5_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_6_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_6_AssignedColumn" msprop:Generator_UserColumnName="Exercise_6_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_6_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Name" msprop:Generator_ColumnPropNameInRow="Exercise_6_Name" msprop:Generator_ColumnPropNameInTable="Exercise_6_NameColumn" msprop:Generator_UserColumnName="Exercise_6_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_6_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_6_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_6_SetsColumn" msprop:Generator_UserColumnName="Exercise_6_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_6_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_6_RepsColumn" msprop:Generator_UserColumnName="Exercise_6_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_6_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_6_WeightColumn" msprop:Generator_UserColumnName="Exercise_6_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_6_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_6_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_6_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_6_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_7_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_7_AssignedColumn" msprop:Generator_UserColumnName="Exercise_7_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_7_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Name" msprop:Generator_ColumnPropNameInRow="Exercise_7_Name" msprop:Generator_ColumnPropNameInTable="Exercise_7_NameColumn" msprop:Generator_UserColumnName="Exercise_7_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_7_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_7_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_7_SetsColumn" msprop:Generator_UserColumnName="Exercise_7_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_7_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_7_RepsColumn" msprop:Generator_UserColumnName="Exercise_7_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_7_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_7_WeightColumn" msprop:Generator_UserColumnName="Exercise_7_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_7_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_7_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_7_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_7_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_8_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_8_AssignedColumn" msprop:Generator_UserColumnName="Exercise_8_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_8_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Name" msprop:Generator_ColumnPropNameInRow="Exercise_8_Name" msprop:Generator_ColumnPropNameInTable="Exercise_8_NameColumn" msprop:Generator_UserColumnName="Exercise_8_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_8_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_8_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_8_SetsColumn" msprop:Generator_UserColumnName="Exercise_8_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_8_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_8_RepsColumn" msprop:Generator_UserColumnName="Exercise_8_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_8_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_8_WeightColumn" msprop:Generator_UserColumnName="Exercise_8_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_8_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_8_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_8_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_8_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_9_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_9_AssignedColumn" msprop:Generator_UserColumnName="Exercise_9_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_9_Name" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Name" msprop:Generator_ColumnPropNameInRow="Exercise_9_Name" msprop:Generator_ColumnPropNameInTable="Exercise_9_NameColumn" msprop:Generator_UserColumnName="Exercise_9_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exercise_9_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_9_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_9_SetsColumn" msprop:Generator_UserColumnName="Exercise_9_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_9_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_9_RepsColumn" msprop:Generator_UserColumnName="Exercise_9_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_9_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_9_WeightColumn" msprop:Generator_UserColumnName="Exercise_9_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_MaxRangeOfMotion" msprop:Generator_ColumnVarNameInTable="columnExercise_9_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInRow="Exercise_9_MaxRangeOfMotion" msprop:Generator_ColumnPropNameInTable="Exercise_9_MaxRangeOfMotionColumn" msprop:Generator_UserColumnName="Exercise_9_MaxRangeOfMotion" type="xs:int" minOccurs="0" />
+              <xs:element name="PatientNotes" msprop:Generator_ColumnVarNameInTable="columnPatientNotes" msprop:Generator_ColumnPropNameInRow="PatientNotes" msprop:Generator_ColumnPropNameInTable="PatientNotesColumn" msprop:Generator_UserColumnName="PatientNotes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TherapistNotes" msprop:Generator_ColumnVarNameInTable="columnTherapistNotes" msprop:Generator_ColumnPropNameInRow="TherapistNotes" msprop:Generator_ColumnPropNameInTable="TherapistNotesColumn" msprop:Generator_UserColumnName="TherapistNotes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
