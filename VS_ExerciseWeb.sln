@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VS_ExerciseWeb(1)", "VS_ExerciseWeb\", "{BA576C7D-EDB0-4CD9-8C5A-75E5538322CD}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "VS_ExerciseWeb", "VS_ExerciseWeb\", "{BA576C7D-EDB0-4CD9-8C5A-75E5538322CD}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_60229"
 		Debug.AspNetCompiler.PhysicalPath = "VS_ExerciseWeb\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60229\"
