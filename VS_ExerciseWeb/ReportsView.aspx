@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ReportsView.aspx.vb" Inherits="ReportsView" %>
 
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,7 +34,11 @@
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #query{margin-top:50px;margin-left:130px;float:left}
+        #query{margin-top:13px;
+margin-left:15px;
+float:left;
+            width: 733px;
+        }
         #reportlist{margin-top:50px;float:left}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{width: 200px}
@@ -107,6 +113,14 @@
                                     <input type="text" id="datepicker" class="auto-style1"></td>
                             </tr>
                         </table>
+                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
+                            <LocalReport ReportPath="PrescribedWorkouts.rdlc">
+                                <DataSources>
+                                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                                </DataSources>
+                            </LocalReport>
+                        </rsweb:ReportViewer>
+                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
                         <br/>
                         <input type=button value='Submit'/>
                         <br/><!--onClick="location.href='WelcomePage.aspx'"-->
@@ -135,6 +149,7 @@
                         </asp:TableRow>
                     </asp:Table>
                 </div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             </form>
         </div>
 

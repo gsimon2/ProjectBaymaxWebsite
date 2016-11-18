@@ -3,8 +3,12 @@ Partial Class ManagePatients
     Inherits System.Web.UI.Page
     Dim WebsiteName As String = "ProjectBaymax.com"
 
+
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         On Error GoTo Page_Load_Error
+
+        'This keeps the page from jumping back to the top on post backs
+        Page.MaintainScrollPositionOnPostBack = True
 
         'First change to make sure that user data is available
         If CType(Session.Item("UserID"), String) = "" Then
@@ -404,4 +408,5 @@ SubmitButton_Click_Error:
         msg += "<" & "/script>"
         Response.Write(msg)
     End Sub
+
 End Class

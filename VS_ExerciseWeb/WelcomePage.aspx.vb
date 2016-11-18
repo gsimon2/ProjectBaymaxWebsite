@@ -4,6 +4,10 @@ Partial Class WelcomePage
     Inherits System.Web.UI.Page
     Dim WebsiteName As String = "ProjectBaymax.com"
 
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'This keeps the page from jumping back to the top on post backs
+        Page.MaintainScrollPositionOnPostBack = True
+    End Sub
 
     Sub Login_Button_Click()
         On Error GoTo Login_Button_Click_Error
@@ -330,6 +334,8 @@ Login_Button_Click_Error:
         msg += "<" & "/script>"
         Response.Write(msg)
     End Sub
+
+
 End Class
 
 

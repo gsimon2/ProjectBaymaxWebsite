@@ -5,6 +5,9 @@ Partial Class NewPatient
     Dim WebsiteName As String = "ProjectBaymax.com"
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'This keeps the page from jumping back to the top on post backs
+        Page.MaintainScrollPositionOnPostBack = True
+
         If CType(Session.Item("UserID"), String) = "" Then
             Server.Transfer("WelcomePage.aspx", True)
         End If
