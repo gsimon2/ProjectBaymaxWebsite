@@ -18,8 +18,10 @@
         #therapistform{margin-top:50px;margin-left:180px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{height: 116px;  margin-top: 12px}
-        .auto-style3{width: 200px}
         a:hover{background-color: yellow}
+        .auto-style4 {
+            color: #FF0000;
+        }
     </style>
 </head>
 
@@ -42,25 +44,25 @@
             <div id="therapistform">
                 <form id="form1" runat="server" style="text-align:left">
                     <fieldset style="width: 400px" dir="ltr">
-                        <legend align="center">Account information:</legend>
+                        <legend align="center">Account Information:</legend>
                         <table width="400px">
                             <tr>
-                                <td class="auto-style2">User ID:</td>
+                                <td class="auto-style2">User ID: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="UserID_text" runat="server" Width="200px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style2">Set password:</td>
+                                <td class="auto-style2">Set Password: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="Password_text" runat="server" Width="200px" TextMode="Password"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style2">Email address:</td>
+                                <td class="auto-style2">Email Address: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="Email_text" runat="server" Width="200px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style2">Group affiliation:</td>
+                                <td class="auto-style2">Group Affiliation: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="Group_text" runat="server" Width="200px"></asp:TextBox></td>
                             </tr>

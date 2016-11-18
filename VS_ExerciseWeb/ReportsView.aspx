@@ -113,6 +113,10 @@ float:left;
                                     <input type="text" id="datepicker" class="auto-style1"></td>
                             </tr>
                         </table>
+                        <br/>
+                        <input type=button value='Submit'/>
+                        <br/><!--onClick="location.href='WelcomePage.aspx'"-->
+                        <br/>
                         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
                             <LocalReport ReportPath="PrescribedWorkouts.rdlc">
                                 <DataSources>
@@ -122,9 +126,8 @@ float:left;
                         </rsweb:ReportViewer>
                         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
-                        <br/>
-                        <input type=button value='Submit'/>
-                        <br/><!--onClick="location.href='WelcomePage.aspx'"-->
+                        
+
                     </fieldset>
                 </div>
 

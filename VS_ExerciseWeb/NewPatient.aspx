@@ -23,11 +23,7 @@
         }
         a:hover{background-color: yellow}
         .auto-style4 {
-            width: 236px;
-            height: 34px;
-        }
-        .auto-style5 {
-            height: 34px;
+            color: #FF0000;
         }
     </style>
 </head>
@@ -60,12 +56,12 @@
                         <legend align="center">Patient information:</legend>
                         <table style="width: 537px">
                             <tr>
-                                <td class="auto-style3">Patient First Name:</td>
+                                <td class="auto-style3">Patient First Name: <span class="auto-style4">*</span></td>
                                 <td> <!--class="auto-style5">-->
                                     <asp:TextBox ID="PatientFirstName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>                    
                             <tr>
-                                <td class="auto-style3">Patient Last Name:</td>
+                                <td class="auto-style3">Patient Last Name: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="PatientLastName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>
@@ -75,12 +71,12 @@
                                     <asp:TextBox ID="PatientMiddleName_text" runat="server" Width="282px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style3">Set Password:</td>
+                                <td class="auto-style3">Set Password: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="Password_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
                             </tr>
                             <tr>
-                                <td class="auto-style3">Confirm Pasword:</td>
+                                <td class="auto-style3">Confirm Password: <span class="auto-style4">*</span></td>
                                 <td>
                                     <asp:TextBox ID="ConfirmPassword_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
                             </tr>

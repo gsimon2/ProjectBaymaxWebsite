@@ -67,6 +67,16 @@
         #form1 {
             height: 1162px;
         }
+        .auto-style4 {
+            color: #FF0000;
+        }
+        .auto-style5 {
+            width: 201px;
+        }
+        .auto-style6 {
+            position: absolute;
+            width: 201px;
+        }
     </style>
 </head>
 
@@ -95,24 +105,24 @@
                         <col width="174">
                         <col width="500">
                         <tr>
-                            <td>Filter by First Patient Name:</td>
+                            <td class="auto-style5">Filter by First Patient Name:</td>
                             <td><asp:TextBox ID="NameText" runat="server" Width="240px" AutoPostBack="True"></asp:TextBox></td>
                         </tr>
                         <tr>
-                            <td>Select a Patient:</td>
+                            <td class="auto-style5">Select a Patient: <span class="auto-style4">*</span></td>
                             <td>
                                 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
-                            <td>Date-Time Prescription Entered (MM/DD/YYYY):</td>
+                            <td class="auto-style5">Date-Time Prescription Entered (MM/DD/YYYY): <span class="auto-style4">*</span></td>
                             <td><input type="text" id="datepicker" runat="server" style="width:240px"></td>
                                 <!--<asp:TextBox ID="TextBox1" runat="server" Width="240px"></asp:TextBox>-->
                             
                         </tr>
                         <tr>
-                            <td style="position:absolute">Exercises to be Performed:</td>
+                            <td class="auto-style6">Exercises to be Performed: <span class="auto-style4">*</span></td>
                             <td>
                                  
                                 <div id="checkboxes">
@@ -227,17 +237,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Notes for Patient:</td>
+                            <td class="auto-style5">Notes for Patient:</td>
                             <td>
                                 <asp:TextBox id="PatientNotes" runat="server" cols="20" name="S1" rows="2" TextMode="multiline"  style="width: 240px"></asp:TextBox>
                         </tr>
                         <tr>
-                            <td>Notes for Physical Therapist:</td>
+                            <td class="auto-style5">Notes for Physical Therapist:</td>
                             <td>
                                 <asp:TextBox id="TherapistNotes" runat="server" cols="20" name="S1" rows="2" TextMode="multiline"  style="width: 240px"></asp:TextBox>
                         </tr>
                         <tr>
-                            <td><asp:Button ID="Button1" runat="server" Text="Submit" Visible="False" />
+                            <td class="auto-style5"><asp:Button ID="Button1" runat="server" Text="Submit" Visible="False" />
                                 <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
                                 <asp:Button ID="ResetButton" runat="server" Text="Reset" Enabled="False" Visible="False" />
                             </td>

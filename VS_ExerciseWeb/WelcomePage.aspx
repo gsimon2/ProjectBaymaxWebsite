@@ -41,7 +41,7 @@
                 <p>Welcome! Please log in or <a href="CreateTherapistForm.aspx">create a new account.</a></p>
                 <br />
                 <fieldset style="width: 257px; margin-left:50px" dir="ltr">
-                    <legend align="center">Account information:</legend>
+                    <legend align="center">Account Information:</legend>
                     <table style="width:50%">
                         <tr>
                             <td>User ID:</td>
