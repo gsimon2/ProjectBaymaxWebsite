@@ -56,11 +56,11 @@
         #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
         #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
-        #leftpanel{width:200px; height:700px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel{width:200px; height:750px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
-        #pagecontent{height : 770px; width : 764px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #workoutform{margin-top:50px;margin-left:40px;float:left}
+        #pagecontent{height : 750px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #workoutform{margin-top:50px;margin-left:100px;float:left}
         #checkboxes span{font-size:smaller;font-style:italic}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         a:hover{background-color: yellow}
@@ -101,18 +101,17 @@
         <div id="pagecontent">
             <form id="form1" runat="server">
                 <div id="workoutform">
-                    <table cellpadding="8px" style="width:725px">
-                        <col width="174">
-                        <col width="500">
+                    <table cellpadding="8px" style="width:650px">
+                        <col width="220">
+                        <col width="430">
                         <tr>
-                            <td class="auto-style5">Filter by First Patient Name:</td>
+                            <td class="auto-style5">Filter by Patient's First Name:</td>
                             <td><asp:TextBox ID="NameText" runat="server" Width="240px" AutoPostBack="True"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td class="auto-style5">Select a Patient: <span class="auto-style4">*</span></td>
                             <td>
-                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
-                                </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" Width="240px"></asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
@@ -246,13 +245,19 @@
                             <td>
                                 <asp:TextBox id="TherapistNotes" runat="server" cols="20" name="S1" rows="2" TextMode="multiline"  style="width: 240px"></asp:TextBox>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td class="auto-style5"><asp:Button ID="Button1" runat="server" Text="Submit" Visible="False" />
-                                <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
+                                <p style="text-align: center"><asp:Button ID="SubmitButton" runat="server" Text="Submit" /></p>
                                 <asp:Button ID="ResetButton" runat="server" Text="Reset" Enabled="False" Visible="False" />
                             </td>
-                        </tr>
+                        </tr>-->
                     </table>
+                    <p style="margin-left:180px">
+                        <asp:Button ID="Button2" runat="server" Text="Submit" Visible="False" />
+                        <asp:Button ID="Button3" runat="server" Text="Submit" />
+                        <asp:Button ID="Button4" runat="server" Text="Reset" Enabled="False" Visible="False" />
+                    </p>
+                    
                 </div>
             </form>
         </div>

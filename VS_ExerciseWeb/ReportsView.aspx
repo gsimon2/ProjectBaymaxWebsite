@@ -34,14 +34,11 @@
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #query{margin-top:13px;
-margin-left:15px;
-float:left;
-            width: 733px;
-        }
+        #query{margin-top:13px; margin-left:170px; float:left; width: 733px}
         #reportlist{margin-top:50px;float:left}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
-        .auto-style1{width: 200px}
+        .auto-style1{width: 250px}
+        .auto-style2{width: 160px}
         a:hover{background-color: yellow}
     </style>
 </head>
@@ -67,11 +64,11 @@ float:left;
         <div id="pagecontent">
             <form id="form1" runat="server">
                 <div id="query">
-                    <fieldset style="width: 480px" dir="ltr">
+                    <fieldset style="width: 430px" dir="ltr">
                         <legend align="center">Report Query:</legend>
-                        <table width="500px">
+                        <table width="430px">
                             <tr>
-                                <td>User ID:
+                                <td class="auto-style2">User ID:
                                     <!--<asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
                                         <asp:ListItem>User ID</asp:ListItem>
                                         <asp:ListItem>First Name</asp:ListItem>
@@ -113,23 +110,25 @@ float:left;
                                     <input type="text" id="datepicker" class="auto-style1"></td>
                             </tr>
                         </table>
-                        <br/>
-                        <input type=button value='Submit'/>
-                        <br/><!--onClick="location.href='WelcomePage.aspx'"-->
-                        <br/>
-                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
-                            <LocalReport ReportPath="PrescribedWorkouts.rdlc">
-                                <DataSources>
-                                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
-                                </DataSources>
-                            </LocalReport>
-                        </rsweb:ReportViewer>
-                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
-                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
-                        
-
+                        <p style="text-align: center"><input type=button value='Submit'/></p>
+                        <!--onClick="location.href='WelcomePage.aspx'"-->
                     </fieldset>
+                    <br/>
                 </div>
+                <div id="reportviewer">
+                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
+                        <LocalReport ReportPath="PrescribedWorkouts.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
+                            </DataSources>
+                        </LocalReport>
+                    </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
+                 </div>       
+
+                    
+                
 
                 <div id="reportlist">
                 </div>

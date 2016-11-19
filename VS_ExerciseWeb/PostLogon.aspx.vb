@@ -7,7 +7,7 @@ Partial Class PostLogon
         Page.MaintainScrollPositionOnPostBack = True
 
         'For some reason it will give error messages about object IDs not being declared. Ignore this, it will work out when it loads
-        WelcomeMessage.Text = "Welcome " + CType(Session.Item("UserName"), String) + "!"
+        WelcomeMessage.Text = "Welcome, " + CType(Session.Item("UserName"), String) + "!"
 
     End Sub
 

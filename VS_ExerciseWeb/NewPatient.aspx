@@ -15,12 +15,10 @@
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
         #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #patientform{margin-top:50px;margin-left:100px}
+        #patientform{margin-top:50px;margin-left:170px}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{height: 116px;  margin-top: 12px}
-        .auto-style3{
-            width: 236px
-        }
+        .auto-style3{width: 160px}
         a:hover{background-color: yellow}
         .auto-style4 {
             color: #FF0000;
@@ -52,49 +50,47 @@
 
             <div id="patientform">
                 <form id="form1" runat="server" style="text-align:left">
-                    <fieldset style="width: 537px" dir="ltr">
+                    <fieldset style="width: 430px" dir="ltr">
                         <legend align="center">Patient information:</legend>
-                        <table style="width: 537px">
+                        <table style="width: 430px">
                             <tr>
                                 <td class="auto-style3">Patient First Name: <span class="auto-style4">*</span></td>
                                 <td> <!--class="auto-style5">-->
-                                    <asp:TextBox ID="PatientFirstName_text" runat="server" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="PatientFirstName_text" runat="server" Width="250px"></asp:TextBox></td>
                             </tr>                    
                             <tr>
                                 <td class="auto-style3">Patient Last Name: <span class="auto-style4">*</span></td>
                                 <td>
-                                    <asp:TextBox ID="PatientLastName_text" runat="server" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="PatientLastName_text" runat="server" Width="250px"></asp:TextBox></td>
                             </tr>
                             <tr>
                                 <td class="auto-style3">Patient Middle Name:</td>
                                 <td>
-                                    <asp:TextBox ID="PatientMiddleName_text" runat="server" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="PatientMiddleName_text" runat="server" Width="250px"></asp:TextBox></td>
                             </tr>
                             <tr>
                                 <td class="auto-style3">Set Password: <span class="auto-style4">*</span></td>
                                 <td>
-                                    <asp:TextBox ID="Password_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="Password_text" runat="server"  TextMode="Password" Width="250px"></asp:TextBox></td>
                             </tr>
                             <tr>
                                 <td class="auto-style3">Confirm Password: <span class="auto-style4">*</span></td>
                                 <td>
-                                    <asp:TextBox ID="ConfirmPassword_text" runat="server"  TextMode="Password" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="ConfirmPassword_text" runat="server"  TextMode="Password" Width="250px"></asp:TextBox></td>
                             </tr>
                             <tr>
                                 <td class="auto-style3">Patient Phone:</td>
                                 <td>
-                                    <asp:TextBox ID="Phone_text" runat="server" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="Phone_text" runat="server" Width="250px"></asp:TextBox></td>
                             </tr>
                             <tr>
                                 <td class="auto-style3">Patient Email:</td>
                                 <td>
-                                    <asp:TextBox ID="Email_text" runat="server" Width="282px"></asp:TextBox></td>
+                                    <asp:TextBox ID="Email_text" runat="server" Width="250px"></asp:TextBox></td>
                             </tr>
                             </table>
-                        <br/>
-                        <asp:Button ID="SubmitButton" runat="server" Text="Submit" />
+                        <p style="text-align: center"><asp:Button ID="SubmitButton" runat="server" Text="Submit" /></p>
                         <!--<input type=button onClick="location.href='WelcomePage.aspx'" value='Submit'/>-->
-                        <br/>
                     </fieldset>
                 </form>
             </div>

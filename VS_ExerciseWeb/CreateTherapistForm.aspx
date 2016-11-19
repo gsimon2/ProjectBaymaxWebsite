@@ -67,9 +67,7 @@
                                     <asp:TextBox ID="Group_text" runat="server" Width="200px"></asp:TextBox></td>
                             </tr>
                         </table>
-                        <br/>
-                        <input type=button onClick="location.href='WelcomePage.aspx'" value='Submit'/>
-                        <br/>
+                        <p style="text-align: center"><input type=button onClick="location.href='WelcomePage.aspx'" value='Submit'/></p>
                     </fieldset>
                 </form>
             </div>

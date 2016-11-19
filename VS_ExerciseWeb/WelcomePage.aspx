@@ -42,21 +42,20 @@
                 <br />
                 <fieldset style="width: 257px; margin-left:50px" dir="ltr">
                     <legend align="center">Account Information:</legend>
+                    <br />
                     <table style="width:50%">
                         <tr>
                             <td>User ID:</td>
                             <td>
-                                <asp:TextBox ID="UsernameTextBox" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="UsernameTextBox" runat="server" Width="165px"></asp:TextBox></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
                             <td>
-                                <asp:TextBox ID="PasswordTextBox" TextMode="Password" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="PasswordTextBox" TextMode="Password" runat="server" Width="165px"></asp:TextBox></td>
                         </tr>
                     </table>
-                    <br/>
-                    <input type="button" OnserverClick="Login_Button_Click" runat="server"  value= "Login" id ="Login_Button"/>
-                    <br/>
+                    <p style="text-align: center"><input type="button" OnserverClick="Login_Button_Click" runat="server" value= "Login" id ="Login_Button" style="text-align: center"/></p>
                 </fieldset>
             </div>
 
