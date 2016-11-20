@@ -30,11 +30,11 @@
         #entire{width:1000px; margin:50px auto 0 auto; font-family:'Franklin Gothic Medium'}
         #header{height:140px; width : 1000px; background-color:cornflowerblue; border:ridge;border-color:mediumseagreen}
         #header h1{font-size:60px; text-align:center}
-        #leftpanel{width:200px; height:458px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
+        #leftpanel{width:200px; height:358px; margin-bottom:20px; float:left; background-color:palegreen;border:ridge; border-color:mediumseagreen}
         #leftpanel p{margin-top:50px}
         #leftpanel li a{color:cornflowerblue}
-        #pagecontent{height : 458px; width : 764px; margin-left:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
-        #query{margin-top:13px; margin-left:170px; float:left; width: 733px}
+        #pagecontent{height : 358px; width : 764px; margin-left:20px; margin-bottom:20px; float:left; background-color:lightblue;border:ridge; border-color:mediumseagreen}
+        #query{margin-top:50px; margin-left:170px; float:left; width: 733px}
         #reportlist{margin-top:50px;float:left}
         #footer{float:left; height:80px; width:1000px; margin-top:20px; background-color:mediumseagreen; border:ridge;border-color:mediumseagreen}
         .auto-style1{width: 250px}
@@ -61,8 +61,8 @@
             </ul>
         </div>
 
-        <div id="pagecontent">
-            <form id="form1" runat="server">
+        <form id="form1" runat="server">
+            <div id="pagecontent">
                 <div id="query">
                     <fieldset style="width: 430px" dir="ltr">
                         <legend align="center">Report Query:</legend>
@@ -114,29 +114,23 @@
                         <!--onClick="location.href='WelcomePage.aspx'"-->
                     </fieldset>
                     <br/>
-                </div>
-                <div id="reportviewer">
-                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="929px">
-                        <LocalReport ReportPath="PrescribedWorkouts.rdlc">
-                            <DataSources>
-                                <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
-                            </DataSources>
-                        </LocalReport>
-                    </rsweb:ReportViewer>
-                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
-                 </div>       
+                </div>            
+            </div>
+            <div id="reportviewer">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="8pt" WaitMessageFont-Names="Franklin Gothic Medium" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="1000px" Height="200px">
+                    <LocalReport ReportPath="PrescribedWorkouts.rdlc">
+                        <DataSources>
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
+                        </DataSources>
+                    </LocalReport>
+                </rsweb:ReportViewer>
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
+                </div>       
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        </form>
 
-                    
-                
-
-                <div id="reportlist">
-                </div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            </form>
-        </div>
-
-        <div id="footer" style="text-align:center">
+        <div id="footer" style="text-align:center;visibility:collapse">
             <asp:Image ID="Panther_Logo" runat="server" ImageUrl="~/Images/Panther_Logo.png" ImageAlign="Middle" Height="76px" BorderWidth="2px"/>
             <asp:Image ID="GLCE_Logo" runat="server" ImageUrl="~/Images/GLCE_logo.jpg" Height="76px" ImageAlign="Middle" BorderWidth="2px" />
         </div>

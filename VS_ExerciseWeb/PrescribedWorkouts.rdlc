@@ -4531,6 +4531,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <FontFamily>Franklin Gothic Medium</FontFamily>
         </Style>
       </Tablix>
     </ReportItems>
