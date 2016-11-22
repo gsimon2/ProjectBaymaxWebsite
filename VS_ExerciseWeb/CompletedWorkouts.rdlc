@@ -641,7 +641,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Average Weight</Value>
+                              <Value>Completed Weight</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
