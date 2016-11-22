@@ -10,6 +10,42 @@ Partial Class ReportsView
         Page.MaintainScrollPositionOnPostBack = True
     End Sub
 
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        'ReportViewer1.LocalReport.DataSources.Clear()
+
+        Dim reportDataSource = New Microsoft.Reporting.WebForms.ReportDataSource()
+
+        ReportViewer1.LocalReport.ReportEmbeddedResource = "PrescribedWorkouts.rdlc"
+        ReportViewer1.LocalReport.ReportPath = MapPath("PrescribedWorkouts.rdlc")
+
+        reportDataSource.Name = "DataSet1"
+        reportDataSource.DataSourceId = "ObjectDataSource2"
+        'reportDataSource.Value = DataSetBindingSource
+
+
+        ReportViewer1.LocalReport.DataSources.Add(reportDataSource)
+
+        ReportViewer1.LocalReport.Refresh()
+
+
+        'ReportViewer1.Reset()
+        ' ReportViewer1.LocalReport.ReportEmbeddedResource = MapPath("PrescribedWorkouts.rdlc") + ".rdlc"
+        'ReportViewer1.LocalReport.ReportEmbeddedResource = "VS_ExerciseWeb.PrescribedWorkouts.rdlc"
+
+
+        'ReportViewer1.LocalReport.ReportPath = MapPath("PrescribedWorkouts.rdlc")
+        'ReportViewer1.LocalReport.LoadReportDefinition()
+
+        'ReportViewer1.DataBind()
+        'ReportViewer1.LocalReport.Refresh()
+
+        'ReportViewer1.LocalReport.Refresh()
+
+    End Sub
+
+
     Private Sub alert(ByVal alert_message As String)
         Dim msg As String
         msg = "<script language='javascript'>"
@@ -21,4 +57,5 @@ Partial Class ReportsView
         Response.Write(msg)
     End Sub
 
+    
 End Class

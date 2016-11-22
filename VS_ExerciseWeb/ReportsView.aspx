@@ -113,17 +113,19 @@
                         <p style="text-align: center"><input type=button value='Submit'/></p>
                         <!--onClick="location.href='WelcomePage.aspx'"-->
                     </fieldset>
+                    <asp:Button ID="Button1" runat="server" Text="Button" />
                     <br/>
                 </div>            
             </div>
             <div id="reportviewer">
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="8pt" WaitMessageFont-Names="Franklin Gothic Medium" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="1000px" Height="200px">
-                    <LocalReport ReportPath="PrescribedWorkouts.rdlc">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="8pt" WaitMessageFont-Names="Franklin Gothic Medium" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="1000px" Height="587px">
+                    <LocalReport ReportPath="CompletedWorkouts.rdlc">
                         <DataSources>
-                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet1" />
+                            <rsweb:ReportDataSource DataSourceId="ObjectDataSource3" Name="CompWorkoutDataSet" />
                         </DataSources>
                     </LocalReport>
                 </rsweb:ReportViewer>
+                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable2TableAdapter"></asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetData" TypeName="DataSetTableAdapters.DataTable1TableAdapter"></asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ProjectBaymax_DbDataSetTableAdapters.Prescribed_WorkoutsTableAdapter"></asp:ObjectDataSource>
                 </div>       
