@@ -86,12 +86,69 @@ FROM   Demographics INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjectBaymax_DbConnectionString (Web.config)" DbObjectName="ProjectBaymax_Db.dbo.Completed_Workouts" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Completed_Workouts.*
+FROM   Completed_Workouts INNER JOIN
+             Prescribed_Workouts ON Completed_Workouts.Workout_ID = Prescribed_Workouts.Workout_ID INNER JOIN
+             Demographics ON Completed_Workouts.Recipient_ID = Demographics.UserID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Recipient_ID" DataSetColumn="Recipient_ID" />
+              <Mapping SourceColumn="Workout_ID" DataSetColumn="Workout_ID" />
+              <Mapping SourceColumn="Date_Completed" DataSetColumn="Date_Completed" />
+              <Mapping SourceColumn="Exercise_1_Assigned" DataSetColumn="Exercise_1_Assigned" />
+              <Mapping SourceColumn="Exercise_1_Sets" DataSetColumn="Exercise_1_Sets" />
+              <Mapping SourceColumn="Exercise_1_Reps" DataSetColumn="Exercise_1_Reps" />
+              <Mapping SourceColumn="Exercise_1_Weight" DataSetColumn="Exercise_1_Weight" />
+              <Mapping SourceColumn="Exercise_2_Assigned" DataSetColumn="Exercise_2_Assigned" />
+              <Mapping SourceColumn="Exercise_2_Sets" DataSetColumn="Exercise_2_Sets" />
+              <Mapping SourceColumn="Exercise_2_Reps" DataSetColumn="Exercise_2_Reps" />
+              <Mapping SourceColumn="Exercise_2_Weight" DataSetColumn="Exercise_2_Weight" />
+              <Mapping SourceColumn="Exercise_3_Assigned" DataSetColumn="Exercise_3_Assigned" />
+              <Mapping SourceColumn="Exercise_3_Sets" DataSetColumn="Exercise_3_Sets" />
+              <Mapping SourceColumn="Exercise_3_Reps" DataSetColumn="Exercise_3_Reps" />
+              <Mapping SourceColumn="Exercise_3_Weight" DataSetColumn="Exercise_3_Weight" />
+              <Mapping SourceColumn="Exercise_4_Assigned" DataSetColumn="Exercise_4_Assigned" />
+              <Mapping SourceColumn="Exercise_4_Sets" DataSetColumn="Exercise_4_Sets" />
+              <Mapping SourceColumn="Exercise_4_Reps" DataSetColumn="Exercise_4_Reps" />
+              <Mapping SourceColumn="Exercise_4_Weight" DataSetColumn="Exercise_4_Weight" />
+              <Mapping SourceColumn="Exercise_5_Assigned" DataSetColumn="Exercise_5_Assigned" />
+              <Mapping SourceColumn="Exercise_5_Sets" DataSetColumn="Exercise_5_Sets" />
+              <Mapping SourceColumn="Exercise_5_Reps" DataSetColumn="Exercise_5_Reps" />
+              <Mapping SourceColumn="Exercise_5_Weight" DataSetColumn="Exercise_5_Weight" />
+              <Mapping SourceColumn="Exercise_6_Assigned" DataSetColumn="Exercise_6_Assigned" />
+              <Mapping SourceColumn="Exercise_6_Sets" DataSetColumn="Exercise_6_Sets" />
+              <Mapping SourceColumn="Exercise_6_Reps" DataSetColumn="Exercise_6_Reps" />
+              <Mapping SourceColumn="Exercise_6_Weight" DataSetColumn="Exercise_6_Weight" />
+              <Mapping SourceColumn="Exercise_7_Assigned" DataSetColumn="Exercise_7_Assigned" />
+              <Mapping SourceColumn="Exercise_7_Sets" DataSetColumn="Exercise_7_Sets" />
+              <Mapping SourceColumn="Exercise_7_Reps" DataSetColumn="Exercise_7_Reps" />
+              <Mapping SourceColumn="Exercise_7_Weight" DataSetColumn="Exercise_7_Weight" />
+              <Mapping SourceColumn="Exercise_8_Assigned" DataSetColumn="Exercise_8_Assigned" />
+              <Mapping SourceColumn="Exercise_8_Sets" DataSetColumn="Exercise_8_Sets" />
+              <Mapping SourceColumn="Exercise_8_Reps" DataSetColumn="Exercise_8_Reps" />
+              <Mapping SourceColumn="Exercise_8_Weight" DataSetColumn="Exercise_8_Weight" />
+              <Mapping SourceColumn="Exercise_9_Assigned" DataSetColumn="Exercise_9_Assigned" />
+              <Mapping SourceColumn="Exercise_9_Sets" DataSetColumn="Exercise_9_Sets" />
+              <Mapping SourceColumn="Exercise_9_Reps" DataSetColumn="Exercise_9_Reps" />
+              <Mapping SourceColumn="Exercise_9_Weight" DataSetColumn="Exercise_9_Weight" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet" msprop:Generator_DataSetName="DataSet">
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
@@ -240,7 +297,56 @@ FROM   Demographics INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Recipient_ID" msprop:Generator_ColumnVarNameInTable="columnRecipient_ID" msprop:Generator_ColumnPropNameInRow="Recipient_ID" msprop:Generator_ColumnPropNameInTable="Recipient_IDColumn" msprop:Generator_UserColumnName="Recipient_ID" type="xs:int" />
+              <xs:element name="Workout_ID" msprop:Generator_ColumnVarNameInTable="columnWorkout_ID" msprop:Generator_ColumnPropNameInRow="Workout_ID" msprop:Generator_ColumnPropNameInTable="Workout_IDColumn" msprop:Generator_UserColumnName="Workout_ID" type="xs:int" />
+              <xs:element name="Date_Completed" msprop:Generator_ColumnVarNameInTable="columnDate_Completed" msprop:Generator_ColumnPropNameInRow="Date_Completed" msprop:Generator_ColumnPropNameInTable="Date_CompletedColumn" msprop:Generator_UserColumnName="Date_Completed" type="xs:dateTime" />
+              <xs:element name="Exercise_1_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_1_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_1_AssignedColumn" msprop:Generator_UserColumnName="Exercise_1_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_1_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_1_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_1_SetsColumn" msprop:Generator_UserColumnName="Exercise_1_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_1_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_1_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_1_RepsColumn" msprop:Generator_UserColumnName="Exercise_1_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_1_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_1_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_1_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_1_WeightColumn" msprop:Generator_UserColumnName="Exercise_1_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_2_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_2_AssignedColumn" msprop:Generator_UserColumnName="Exercise_2_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_2_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_2_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_2_SetsColumn" msprop:Generator_UserColumnName="Exercise_2_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_2_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_2_RepsColumn" msprop:Generator_UserColumnName="Exercise_2_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_2_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_2_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_2_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_2_WeightColumn" msprop:Generator_UserColumnName="Exercise_2_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_3_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_3_AssignedColumn" msprop:Generator_UserColumnName="Exercise_3_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_3_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_3_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_3_SetsColumn" msprop:Generator_UserColumnName="Exercise_3_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_3_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_3_RepsColumn" msprop:Generator_UserColumnName="Exercise_3_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_3_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_3_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_3_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_3_WeightColumn" msprop:Generator_UserColumnName="Exercise_3_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_4_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_4_AssignedColumn" msprop:Generator_UserColumnName="Exercise_4_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_4_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_4_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_4_SetsColumn" msprop:Generator_UserColumnName="Exercise_4_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_4_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_4_RepsColumn" msprop:Generator_UserColumnName="Exercise_4_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_4_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_4_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_4_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_4_WeightColumn" msprop:Generator_UserColumnName="Exercise_4_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_5_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_5_AssignedColumn" msprop:Generator_UserColumnName="Exercise_5_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_5_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_5_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_5_SetsColumn" msprop:Generator_UserColumnName="Exercise_5_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_5_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_5_RepsColumn" msprop:Generator_UserColumnName="Exercise_5_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_5_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_5_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_5_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_5_WeightColumn" msprop:Generator_UserColumnName="Exercise_5_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_6_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_6_AssignedColumn" msprop:Generator_UserColumnName="Exercise_6_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_6_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_6_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_6_SetsColumn" msprop:Generator_UserColumnName="Exercise_6_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_6_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_6_RepsColumn" msprop:Generator_UserColumnName="Exercise_6_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_6_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_6_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_6_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_6_WeightColumn" msprop:Generator_UserColumnName="Exercise_6_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_7_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_7_AssignedColumn" msprop:Generator_UserColumnName="Exercise_7_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_7_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_7_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_7_SetsColumn" msprop:Generator_UserColumnName="Exercise_7_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_7_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_7_RepsColumn" msprop:Generator_UserColumnName="Exercise_7_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_7_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_7_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_7_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_7_WeightColumn" msprop:Generator_UserColumnName="Exercise_7_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_8_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_8_AssignedColumn" msprop:Generator_UserColumnName="Exercise_8_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_8_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_8_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_8_SetsColumn" msprop:Generator_UserColumnName="Exercise_8_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_8_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_8_RepsColumn" msprop:Generator_UserColumnName="Exercise_8_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_8_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_8_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_8_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_8_WeightColumn" msprop:Generator_UserColumnName="Exercise_8_Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Assigned" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Assigned" msprop:Generator_ColumnPropNameInRow="Exercise_9_Assigned" msprop:Generator_ColumnPropNameInTable="Exercise_9_AssignedColumn" msprop:Generator_UserColumnName="Exercise_9_Assigned" type="xs:boolean" />
+              <xs:element name="Exercise_9_Sets" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Sets" msprop:Generator_ColumnPropNameInRow="Exercise_9_Sets" msprop:Generator_ColumnPropNameInTable="Exercise_9_SetsColumn" msprop:Generator_UserColumnName="Exercise_9_Sets" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Reps" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Reps" msprop:Generator_ColumnPropNameInRow="Exercise_9_Reps" msprop:Generator_ColumnPropNameInTable="Exercise_9_RepsColumn" msprop:Generator_UserColumnName="Exercise_9_Reps" type="xs:int" minOccurs="0" />
+              <xs:element name="Exercise_9_Weight" msprop:Generator_ColumnVarNameInTable="columnExercise_9_Weight" msprop:Generator_ColumnPropNameInRow="Exercise_9_Weight" msprop:Generator_ColumnPropNameInTable="Exercise_9_WeightColumn" msprop:Generator_UserColumnName="Exercise_9_Weight" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable2" />
+      <xs:field xpath="mstns:Workout_ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

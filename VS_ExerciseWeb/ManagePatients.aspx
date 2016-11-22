@@ -253,8 +253,7 @@
                         </tr>-->
                     </table>
                     <p style="margin-left:180px">
-                        <asp:Button ID="Button2" runat="server" Text="Submit" Visible="False" />
-                        <asp:Button ID="Button3" runat="server" Text="Submit" />
+                         <asp:Button ID="SubmitButton1" runat="server" Text="Submit"  onserverclick="SubmitButton_Click"/>
                         <asp:Button ID="Button4" runat="server" Text="Reset" Enabled="False" Visible="False" />
                     </p>
                     

@@ -106,7 +106,7 @@ UpdateDropDown_Error:
         Session("PatientUserID") = input.Substring(input.LastIndexOf("-") + 1).Trim()
     End Sub
 
-    Protected Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
+    Protected Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton1.Click
         On Error GoTo SubmitButton_Click_Error
         Dim con As New SqlConnection
         Dim strCon As String = "Server=tcp:projectbaymax.database.windows.net,1433;Initial Catalog=ProjectBaymax_Db;Persist Security Info=False;User ID=Application_Login;Password=GrantMeAccess11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
