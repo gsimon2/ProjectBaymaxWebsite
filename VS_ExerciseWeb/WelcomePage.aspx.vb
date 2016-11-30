@@ -7,6 +7,13 @@ Partial Class WelcomePage
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         'This keeps the page from jumping back to the top on post backs
         Page.MaintainScrollPositionOnPostBack = True
+
+        'Clear Variables if they are set
+        If CType(Session.Item("UserID"), String) <> "" Then
+            Session("UserID") = ""
+            Session("UserName") = ""
+            Session("UserGroup") = ""
+        End If
     End Sub
 
     Sub Login_Button_Click()

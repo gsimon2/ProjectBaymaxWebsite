@@ -409,4 +409,7 @@ SubmitButton_Click_Error:
         Response.Write(msg)
     End Sub
 
+    Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Server.TransferRequest(Request.Url.AbsolutePath, False)
+    End Sub
 End Class

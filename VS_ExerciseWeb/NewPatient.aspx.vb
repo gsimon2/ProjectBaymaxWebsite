@@ -27,6 +27,7 @@ Partial Class NewPatient
         Dim strPatientMiddleName As String
         Dim strPatientLastName As String
         Dim strPassword As String
+        Dim strConfirmPass As String
         Dim strPhone As String
         Dim strEmail As String
         Dim intUserID As Integer
@@ -39,23 +40,35 @@ Partial Class NewPatient
         strPatientLastName = Me.PatientLastName_text.Text
         strPatientMiddleName = Me.PatientMiddleName_text.Text
         strPassword = Me.Password_text.Text
+        strConfirmPass = Me.ConfirmPassword_text.Text
         strPhone = Me.Phone_text.Text
         strEmail = Me.Email_text.Text
         'strGroup = Me.Group_text.Text
 
         'Check for required field values
         If strPatientFirstName = "" Then
-            alert("Please enter a first name for the patient")
+            alert("Please fill out required fields.")
             GoTo SubmitButton_Click_Exit
         End If
 
         If strPatientLastName = "" Then
-            alert("Please enter a last name for the patient")
+            alert("Please fill out required fields.")
             GoTo SubmitButton_Click_Exit
         End If
 
         If strPassword = "" Then
-            alert("Please enter a password for the patient")
+            alert("Please fill out required fields.")
+            GoTo SubmitButton_Click_Exit
+        End If
+
+        If strConfirmPass = "" Then
+            alert("Please fill out required fields.")
+            GoTo SubmitButton_Click_Exit
+        End If
+
+        'Confirm password matches
+        If strConfirmPass <> strPassword Then
+            alert("Please make sure that entered passwords match.")
             GoTo SubmitButton_Click_Exit
         End If
 
