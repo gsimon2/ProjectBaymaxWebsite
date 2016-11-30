@@ -63,6 +63,7 @@
 
         <form id="form1" runat="server">
             <div id="pagecontent">
+                
                 <div id="query">
                     <fieldset style="width: 430px" dir="ltr">
                         <legend align="center">Report Query:</legend>
@@ -113,9 +114,15 @@
                         <p style="text-align: center"><input type=button value='Submit'/></p>
                         <!--onClick="location.href='WelcomePage.aspx'"-->
                     </fieldset>
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
                     <br/>
-                </div>            
+                </div>
+                <br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Please Select a Report to Display"></asp:Label>       
+                <asp:DropDownList ID="SelectReportDropDown" runat="server" AutoPostBack="True">
+                    <asp:ListItem>Completed Workouts</asp:ListItem>
+                    <asp:ListItem>Prescribed Workouts Wide</asp:ListItem>
+                    <asp:ListItem>Prescribed Workouts Stepped</asp:ListItem>
+                </asp:DropDownList>
             </div>
             <div id="reportviewer">
                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="8pt" WaitMessageFont-Names="Franklin Gothic Medium" WaitMessageFont-Size="14pt" style="margin-left: 0px" Width="1000px" Height="587px">
