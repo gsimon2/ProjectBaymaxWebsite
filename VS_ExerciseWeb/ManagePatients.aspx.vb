@@ -157,8 +157,8 @@ UpdateDropDown_Error:
                     strInsertInto = strInsertInto + hold + "_Sets], " + hold + "_Reps], " + hold + "_Weight], " + hold + "_MaxRangeOfMotion], "
                     strValues = strValues + "'" + DirectCast(Form.FindControl("Sets" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
                     strValues = strValues + "'" + DirectCast(Form.FindControl("Reps" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
-                    strValues = strValues + "'" + DirectCast(Form.FindControl("ROM" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
                     strValues = strValues + "'" + DirectCast(Form.FindControl("Weight" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
+                    strValues = strValues + "'" + DirectCast(Form.FindControl("ROM" + Trim(Str(i)) + "Text"), TextBox).Text + "', "
                     ExerciseAssigned = True
                 Else
                     strValues = strValues + "'0', "
