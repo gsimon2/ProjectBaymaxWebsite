@@ -95,14 +95,14 @@ Partial Class NewPatient
         Dim i As Integer = 0
         strUserName = ""
         If Len(strPatientLastName) < 5 Then
-            strUserName = strPatientLastName.Substring(0, Len(strPatientLastName))
+            strUserName = Trim(strPatientLastName.Substring(0, Len(strPatientLastName)))
         Else
-            strUserName = strPatientLastName.Substring(0, 5)
+            strUserName = Trim(strPatientLastName.Substring(0, 5))
         End If
         If Len(strPatientFirstName) < 3 Then
-            strUserName = strUserName + strPatientFirstName.Substring(0, Len(strPatientFirstName))
+            strUserName = Trim(strUserName + strPatientFirstName.Substring(0, Len(strPatientFirstName)))
         Else
-            strUserName = strUserName + strPatientFirstName.Substring(0, 3)
+            strUserName = Trim(strUserName + strPatientFirstName.Substring(0, 3))
         End If
 
         Dim strBaseUserName As String = strUserName
@@ -114,7 +114,7 @@ Partial Class NewPatient
             'If rd has rows then the user name is taken
             If rd.HasRows Then
                 i += 1
-                strUserName = strBaseUserName + Str(i)
+                strUserName = Trim(Trim(strBaseUserName) + Trim(Str(i)))
                 done = False
             Else
                 done = True
