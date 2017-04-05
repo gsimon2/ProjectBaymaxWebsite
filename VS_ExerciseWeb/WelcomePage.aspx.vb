@@ -54,25 +54,33 @@ Partial Class WelcomePage
             rd = cmd.ExecuteReader
             If rd.HasRows Then
                 rd.Read()
-                GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
-                Session("UserName") = GlobalVars.CurrentUserFirstName
-                Session("UserGroup") = rd.GetValue(6).ToString()
+                'Make sure that login isnt patient
+                If rd.GetValue(7) <> 4 Then
+                    GlobalVars.CurrentUserFirstName = rd.GetValue(1).ToString()
+                    Session("UserName") = GlobalVars.CurrentUserFirstName
+                    Session("UserGroup") = rd.GetValue(6).ToString()
 
-                'Transfer to post logon webpage
-                Server.Transfer("PostLogon.aspx", True)
+                    'Transfer to post logon webpage
+                    Server.Transfer("PostLogon.aspx", True)
+                Else
+                    alert("Patients are not allowed to log into website!")
+                    GoTo Login_Button_Click_Exit
+                End If
+
+
 
             Else
                 alert("No Demographics record found for " & UsernameTextBox.Text & "!")
                 GoTo Login_Button_Click_Exit
             End If
-            rd.Close()
+                rd.Close()
 
 
 
-        Else
-            alert("Invalid Username or Password")
-            GoTo Login_Button_Click_Exit
-        End If
+            Else
+                alert("Invalid Username or Password")
+                GoTo Login_Button_Click_Exit
+            End If
 
         
 
